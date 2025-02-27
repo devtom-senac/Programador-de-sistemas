@@ -23,10 +23,17 @@ namespace login
 
             string senha = TextBoxSenha.Text;
 
-            if (usuario == null || senha == "")
+            if (string.IsNullOrWhiteSpace(usuario))
             {
                 LabelResultado.Text = "Usuario é obrigatorio !!!";
                 LabelResultado.ForeColor = Color.Red;
+                return;
+            }
+
+            if (senha == null || senha == "")
+            {
+                LabelResultado.Text = "Senha é obrigatoria !!!";
+                LabelResultado.ForeColor = Color.Green;  
                 return;
             }
 
@@ -38,7 +45,9 @@ namespace login
             {
                 LabelResultado.Text = "Usuario ou Senha incorretos...";
             }
+
         }
 
     }
 }
+

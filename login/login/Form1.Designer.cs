@@ -28,20 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             buttonEntrar = new Button();
             Usuario = new Label();
             label2 = new Label();
             textBoxUsuario = new TextBox();
             TextBoxSenha = new TextBox();
             LabelResultado = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // buttonEntrar
             // 
-            buttonEntrar.BackColor = SystemColors.Menu;
-            buttonEntrar.Location = new Point(299, 300);
+            buttonEntrar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            buttonEntrar.BackColor = SystemColors.ControlText;
+            buttonEntrar.FlatAppearance.BorderSize = 3;
+            buttonEntrar.Location = new Point(259, 293);
             buttonEntrar.Name = "buttonEntrar";
-            buttonEntrar.Size = new Size(111, 31);
+            buttonEntrar.Size = new Size(151, 35);
             buttonEntrar.TabIndex = 2;
             buttonEntrar.Text = "Enviar";
             buttonEntrar.UseVisualStyleBackColor = false;
@@ -50,7 +55,7 @@
             // Usuario
             // 
             Usuario.AutoSize = true;
-            Usuario.Location = new Point(228, 159);
+            Usuario.Location = new Point(220, 164);
             Usuario.Name = "Usuario";
             Usuario.Size = new Size(47, 15);
             Usuario.TabIndex = 3;
@@ -59,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(228, 228);
+            label2.Location = new Point(220, 228);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
             label2.TabIndex = 4;
@@ -67,15 +72,14 @@
             // 
             // textBoxUsuario
             // 
-            textBoxUsuario.Location = new Point(299, 156);
+            textBoxUsuario.Location = new Point(288, 164);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(100, 23);
             textBoxUsuario.TabIndex = 5;
-            textBoxUsuario.Text = "Tom";
             // 
             // TextBoxSenha
             // 
-            TextBoxSenha.Location = new Point(299, 228);
+            TextBoxSenha.Location = new Point(288, 228);
             TextBoxSenha.Name = "TextBoxSenha";
             TextBoxSenha.Size = new Size(100, 23);
             TextBoxSenha.TabIndex = 6;
@@ -87,6 +91,15 @@
             LabelResultado.Name = "LabelResultado";
             LabelResultado.Size = new Size(0, 15);
             LabelResultado.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Location = new Point(-75, -28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(817, 549);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
@@ -100,11 +113,13 @@
             Controls.Add(label2);
             Controls.Add(Usuario);
             Controls.Add(buttonEntrar);
+            Controls.Add(pictureBox1);
             ForeColor = SystemColors.Highlight;
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "FormLogin";
             Text = "Login";
             Load += FormLogin_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,5 +131,6 @@
         private TextBox textBoxUsuario;
         private TextBox TextBoxSenha;
         private Label LabelResultado;
+        private PictureBox pictureBox1;
     }
 }
