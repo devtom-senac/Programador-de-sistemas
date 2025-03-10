@@ -7,9 +7,18 @@ namespace Login
         List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.vitar", "sukuna.silva" };
         List<string> listaSenhas = new List<string>() { "Brun@123", "12345Abc!", "Sete7Sete!" };
 
+        Usuario neymar = new Usuario() { Email = "neymar.jr@gmail.com", Senha = "Brun@123" };
+        Usuario pablo = new Usuario() { Email = "pablo.vitar@gmail.com", Senha = "12345Abc" };
+        Usuario sukuna = new Usuario() { Email = "sukuna.silva@gmail.com", Senha = "Sete7Sete" };
+
+        List<Usuario> usuarios = new List<Usuario>();
+
         public FormLogin()
         {
             InitializeComponent();
+            usuarios.Add(neymar);
+            usuarios.Add(pablo);
+            usuarios.Add(sukuna);
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
@@ -29,6 +38,14 @@ namespace Login
                 labelResultado.Text = "Senha eh obrigatoria!!!";
                 labelResultado.ForeColor = Color.Red;
                 return;
+            }
+
+            for (int i = 0; i < usuarios.Count; i++)
+            {
+                if (usuarios[i].Email == usuarioBuscado && usuarios[i].Senha == senha)
+                {
+                    autenticado = true;
+                }
             }
 
             int posicaoUsuarioEncontrado = -1;
@@ -54,7 +71,7 @@ namespace Login
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            string novoUsuario = textBoxNovoUsuario.Text;
+             string novoUsuario = textBoxNovoUsuario.Text;
             string novaSenha = textBoxNovaSenha.Text;
 
             if (string.IsNullOrWhiteSpace(novoUsuario))
