@@ -28,25 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            comboBox1 = new ComboBox();
             textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
             SuspendLayout();
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Somar", "Subtrair", "Multiplicar", "Dividir" });
+            comboBox1.Location = new Point(275, 285);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(131, 23);
+            comboBox1.TabIndex = 0;
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 50F);
-            textBox1.Location = new Point(149, 143);
+            textBox1.Location = new Point(179, 99);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(525, 96);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "SEJA BEM-VINDO";
+            textBox1.Size = new Size(49, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(253, 99);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(49, 23);
+            textBox2.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            textBox3.HideSelection = false;
+            textBox3.Location = new Point(328, 99);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(49, 23);
+            textBox3.TabIndex = 3;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(573, 450);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
             Controls.Add(textBox1);
+            Controls.Add(comboBox1);
             ForeColor = SystemColors.ControlDarkDark;
             Name = "Form2";
             Text = "Form2";
@@ -56,6 +84,9 @@
 
         #endregion
 
+        private ComboBox comboBox1;
         private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
     }
 }

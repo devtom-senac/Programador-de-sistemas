@@ -1,0 +1,17 @@
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\bin\Debug\net8.0-windows\Treino.exe
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\bin\Debug\net8.0-windows\Treino.deps.json
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\bin\Debug\net8.0-windows\Treino.runtimeconfig.json
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\bin\Debug\net8.0-windows\Treino.dll
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\bin\Debug\net8.0-windows\Treino.pdb
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.Form1.resources
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.csproj.GenerateResource.cache
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.AssemblyInfoInputs.cache
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.AssemblyInfo.cs
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.csproj.CoreCompileInputs.cache
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.sourcelink.json
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.dll
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\refint\Treino.dll
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.pdb
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\Treino.genruntimeconfig.cache
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\Calculadora\Treino\obj\Debug\net8.0-windows\ref\Treino.dll
