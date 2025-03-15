@@ -17,14 +17,9 @@ namespace Calculadora
             InitializeComponent();
         }
 
-        // Evento que dispara quando a seleção no ComboBox muda
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxForma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxForma.SelectedItem == null)
-            {
-                labelErro.Text = "Selecione um opção";
-                return;
-            }
+           
 
             if (comboBoxForma.SelectedItem.ToString() == "Quadrado")
             {
@@ -47,22 +42,33 @@ namespace Calculadora
 
         private void radioButtonArea_CheckedChanged(object sender, EventArgs e)
         {
+            textBoxAltura.Enabled = false;
             textBoxComprimento.Enabled = false;
         }
 
         private void radioButtonPerimetro_CheckedChanged(object sender, EventArgs e)
         {
+            textBoxAltura.Enabled = false;
             textBoxComprimento.Enabled = false;
         }
 
         private void radioButtonVolume_CheckedChanged(object sender, EventArgs e)
         {
             textBoxComprimento.Enabled = false;
+            textBoxAltura.Enabled = false;
         }
 
         private void buttonCalcular_Click(object sender, EventArgs e)
         {
+            if (comboBoxForma.SelectedItem == null)
+            {
+                labelErro.Text = "Selecione um opção";
+                return;
+            }
+
             labelErro.Text = "";
+
+            textBoxAltura.Enabled = false;
 
             if (radioButtonArea.Checked)
             {
@@ -75,16 +81,53 @@ namespace Calculadora
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(altura) || !altura.All(char.IsNumber))
-                {
-                    labelErro.Text = "Insira uma altura válida.";
-                    return;
-                }
+                double areaValor = Convert.ToDouble(largura);
 
-                double resultado = Convert.ToDouble(altura) * Convert.ToDouble(largura);
+                double resultado = Math.Pow(areaValor, 2);
+
+                textBoxResultado.Text = resultado.ToString();
 
                 textBoxResultado.Text = resultado.ToString();
             }
+
+            if (radioButtonPerimetro.Checked)
+            {
+
+                string largura = textBoxLargura.Text;
+
+                if (string.IsNullOrWhiteSpace(largura) || !largura.All(char.IsNumber))
+                {
+                    labelErro.Text = "Insira uma largura válida.";
+                    return;
+                }
+
+                double resultado = Convert.ToDouble(largura) * 4;
+
+                textBoxResultado.Text = resultado.ToString();
+
+            }
+
+            if (radioButtonVolume.Checked)
+            {
+
+                string largura = textBoxLargura.Text;
+
+                if (string.IsNullOrWhiteSpace(largura) || !largura.All(char.IsNumber))
+                {
+                    labelErro.Text = "Insira uma largura válida.";
+                    return;
+                }
+
+                double larguraValor = Convert.ToDouble(largura);
+
+                double resultado = Math.Pow(larguraValor, 3);
+
+                textBoxResultado.Text = resultado.ToString();
+
+            }
+
         }
+
+        
     }
 }

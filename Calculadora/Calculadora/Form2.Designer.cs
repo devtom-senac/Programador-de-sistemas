@@ -170,11 +170,12 @@
             // comboBoxForma
             // 
             comboBoxForma.FormattingEnabled = true;
-            comboBoxForma.Items.AddRange(new object[] { "Quadrado", "Retângulo" });
+            comboBoxForma.Items.AddRange(new object[] { "Quadrado", "Retangulo" });
             comboBoxForma.Location = new Point(20, 216);
             comboBoxForma.Name = "comboBoxForma";
             comboBoxForma.Size = new Size(116, 23);
             comboBoxForma.TabIndex = 7;
+            comboBoxForma.SelectedIndexChanged += comboBoxForma_SelectedIndexChanged;
             // 
             // groupBoxRetangulo
             // 
