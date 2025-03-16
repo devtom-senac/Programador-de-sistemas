@@ -88,6 +88,15 @@ namespace Calculadora
 
             this.Hide();
         }
+
+        private void buttonTarefa_Click(object sender, EventArgs e)
+        {
+            tarefas trocarPagina = new tarefas();
+
+            trocarPagina.Show();
+
+            this.Hide();
+        }
     }
 }
 

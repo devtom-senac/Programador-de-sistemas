@@ -37,6 +37,7 @@
             buttonMultiplicar = new Button();
             buttonDividir = new Button();
             buttonMigrar = new Button();
+            buttonTarefa = new Button();
             SuspendLayout();
             // 
             // buttonSomar
@@ -53,14 +54,14 @@
             // 
             textBoxValor1.Location = new Point(174, 114);
             textBoxValor1.Name = "textBoxValor1";
-            textBoxValor1.Size = new Size(158, 23);
+            textBoxValor1.Size = new Size(158, 27);
             textBoxValor1.TabIndex = 1;
             // 
             // textBoxValor2
             // 
             textBoxValor2.Location = new Point(174, 143);
             textBoxValor2.Name = "textBoxValor2";
-            textBoxValor2.Size = new Size(158, 23);
+            textBoxValor2.Size = new Size(158, 27);
             textBoxValor2.TabIndex = 2;
             // 
             // labelResultado
@@ -68,7 +69,7 @@
             labelResultado.AutoSize = true;
             labelResultado.Location = new Point(207, 277);
             labelResultado.Name = "labelResultado";
-            labelResultado.Size = new Size(72, 15);
+            labelResultado.Size = new Size(92, 20);
             labelResultado.TabIndex = 3;
             labelResultado.Text = "RESULTADO:";
             // 
@@ -112,9 +113,20 @@
             buttonMigrar.UseVisualStyleBackColor = true;
             buttonMigrar.Click += buttonMigrar_Click;
             // 
+            // buttonTarefa
+            // 
+            buttonTarefa.Location = new Point(465, 188);
+            buttonTarefa.Name = "buttonTarefa";
+            buttonTarefa.Size = new Size(110, 76);
+            buttonTarefa.TabIndex = 8;
+            buttonTarefa.Text = "Tarefa";
+            buttonTarefa.UseVisualStyleBackColor = true;
+            buttonTarefa.Click += buttonTarefa_Click;
+            // 
             // Form1
             // 
             ClientSize = new Size(688, 387);
+            Controls.Add(buttonTarefa);
             Controls.Add(buttonMigrar);
             Controls.Add(buttonDividir);
             Controls.Add(buttonMultiplicar);
@@ -139,5 +151,6 @@
         private Button buttonMultiplicar;
         private Button buttonDividir;
         private Button buttonMigrar;
+        private Button buttonTarefa;
     }
 }
