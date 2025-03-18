@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {}
+    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj": {}
   },
   "projects": {
-    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {
+    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
-        "projectName": "Treino",
-        "projectPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
+        "projectUniqueName": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj",
+        "projectName": "CadastroCliente",
+        "projectPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\CadastroCliente\\CadastroCliente\\CadastroCliente.csproj",
         "packagesPath": "C:\\Users\\heverton.nsouza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\obj\\",
+        "outputPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\CadastroCliente\\CadastroCliente\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
