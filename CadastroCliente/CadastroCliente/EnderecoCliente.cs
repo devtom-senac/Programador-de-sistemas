@@ -16,9 +16,5 @@ namespace CadastroCliente
         public string Estado { get; set; }
         public string CEP { get; set; }
 
-        public static implicit operator EnderecoCliente(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

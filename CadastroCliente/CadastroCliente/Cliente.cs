@@ -12,12 +12,14 @@ namespace CadastroCliente
         public GeneroCliente Genero { get; set; }
         public EtniaCliente Etnia { get; set; }
         public EnderecoCliente Endereco { get; set; }
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Nome {get; set; }
         public string DataNascimento { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string NomeSocial { get; set; }
-        public bool Estrangeiro { get; set; }       
+        public bool Estrangeiro { get; set; }    
+
+       
     }
 }
