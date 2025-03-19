@@ -43,19 +43,14 @@ namespace Calculadora
             // aqui chamamos o método de adicionar tarefa que criamos antes.
             adicionarTarefa();
         }
-        private void buttonDistribuirTempo_Click(object sender, EventArgs e)
-        {
-            DividirTempo(); // Chama o método para dividir o tempo quando o botão for clicado.
-        }
-
-        
-
+            
         private void DividirTempo()
         {
             // Verifica se o tempo total é válido
-            if (!int.TryParse(textBoxTempo.Text, out int tempoTotal) || tempoTotal <= 0)
+            int tempoTotal = ConverterTempo(textBoxTempo.Text);
+            if (tempoTotal <= 0)
             {
-                labelRetorno.Text = "Insira o tempo disponível!";
+                labelRetorno.Text = "Insira um tempo válido no formato (XhYm ou Xm). Ex: 1h30 ou 90min.";
                 return; // Sai do método para evitar erros
             }
 
@@ -88,10 +83,61 @@ namespace Calculadora
                                      (nivel == "Medio") ? tempoPorMedio :
                                      tempoPorDificil;
 
-                // Exibimos a tarefa na listBox com seu respectivo tempo
-                listBoxTarefas.Items.Add($"{nome} - {nivel} - {tempoTarefa:F1} min");
+                // Exibimos a tarefa na listBox com seu respectivo tempo formatado
+                listBoxTarefas.Items.Add($"{nome} - {nivel} - {ConverterParaHorasMinutos(tempoTarefa)}");
             }
         }
+
+        private int ConverterTempo(string entradaTempo)
+        {
+            int totalMinutos = 0;
+
+            // Verifica se a entrada contém "h" (horas)
+            if (entradaTempo.Contains("h"))
+            {
+                string[] partes = entradaTempo.Split('h');
+                if (int.TryParse(partes[0], out int horas))
+                {
+                    totalMinutos += horas * 60; // Converte horas para minutos
+                }
+
+                if (partes.Length > 1 && int.TryParse(partes[1].Replace("min", ""), out int minutos))
+                {
+                    totalMinutos += minutos; // Adiciona os minutos
+                }
+            }
+            else if (entradaTempo.Contains("min")) // Se for só minutos
+            {
+                if (int.TryParse(entradaTempo.Replace("min", ""), out int minutos))
+                {
+                    totalMinutos += minutos;
+                }
+            }
+            else // Caso o usuário digite apenas um número (assumimos que são minutos)
+            {
+                if (int.TryParse(entradaTempo, out int minutos))
+                {
+                    totalMinutos = minutos;
+                }
+            }
+
+            return totalMinutos;
+        }
+
+        private string ConverterParaHorasMinutos(double tempoEmMinutos)
+        {
+            int horas = (int)(tempoEmMinutos / 60);
+            int minutos = (int)(tempoEmMinutos % 60);
+            return $"{horas}h{minutos}min";
+        }
+
+        private void buttonDistribuirTempo_Click(object sender, EventArgs e)
+        {
+            DividirTempo(); // Chama o método para dividir o tempo quando o botão for clicado.
+        }
+
+
+
 
 
 
