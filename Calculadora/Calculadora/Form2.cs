@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Calculadora
+﻿namespace Calculadora
 {
     public partial class Form2 : Form
     {
@@ -19,7 +9,7 @@ namespace Calculadora
 
         private void comboBoxForma_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
 
             if (comboBoxForma.SelectedItem.ToString() == "Quadrado")
             {
@@ -128,6 +118,14 @@ namespace Calculadora
 
         }
 
-        
+        private void buttonCalcularCirculo_Click(object sender, EventArgs e)
+        {
+            labelErro.Text = "";
+
+            if (rdbDiametro.Checked)
+            {
+
+            }
+        }
     }
 }

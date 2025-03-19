@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nasci\\source\\repos\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {}
+    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nasci\\source\\repos\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {
+    "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nasci\\source\\repos\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
+        "projectUniqueName": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
         "projectName": "Treino",
-        "projectPath": "C:\\Users\\nasci\\source\\repos\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
-        "packagesPath": "C:\\Users\\nasci\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nasci\\source\\repos\\Programador-de-sistemas\\Calculadora\\Treino\\obj\\",
+        "projectPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\Treino.csproj",
+        "packagesPath": "C:\\Users\\heverton.nsouza\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\Calculadora\\Treino\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nasci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\heverton.nsouza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
