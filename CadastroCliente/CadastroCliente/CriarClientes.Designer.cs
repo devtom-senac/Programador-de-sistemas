@@ -30,7 +30,7 @@
         {
             button1 = new Button();
             textBoxNomeCliente = new TextBox();
-            textBox2 = new TextBox();
+            textBoxNomeSocial = new TextBox();
             maskedTextBox1 = new MaskedTextBox();
             maskedTextBox2 = new MaskedTextBox();
             textBoxEmail = new TextBox();
@@ -67,9 +67,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(348, 368);
+            button1.Location = new Point(398, 491);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(212, 50);
+            button1.Size = new Size(242, 67);
             button1.TabIndex = 0;
             button1.Text = "buttonCadastrar";
             button1.UseVisualStyleBackColor = true;
@@ -77,64 +78,72 @@
             // 
             // textBoxNomeCliente
             // 
-            textBoxNomeCliente.Location = new Point(59, 61);
+            textBoxNomeCliente.Location = new Point(67, 81);
+            textBoxNomeCliente.Margin = new Padding(3, 4, 3, 4);
             textBoxNomeCliente.Name = "textBoxNomeCliente";
-            textBoxNomeCliente.Size = new Size(248, 23);
+            textBoxNomeCliente.Size = new Size(283, 27);
             textBoxNomeCliente.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxNomeSocial
             // 
-            textBox2.Location = new Point(59, 149);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(248, 23);
-            textBox2.TabIndex = 2;
+            textBoxNomeSocial.Location = new Point(67, 199);
+            textBoxNomeSocial.Margin = new Padding(3, 4, 3, 4);
+            textBoxNomeSocial.Name = "textBoxNomeSocial";
+            textBoxNomeSocial.Size = new Size(283, 27);
+            textBoxNomeSocial.TabIndex = 2;
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(337, 209);
+            maskedTextBox1.Location = new Point(385, 279);
+            maskedTextBox1.Margin = new Padding(3, 4, 3, 4);
             maskedTextBox1.Mask = "00/00/0000";
             maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(114, 23);
+            maskedTextBox1.Size = new Size(130, 27);
             maskedTextBox1.TabIndex = 3;
             maskedTextBox1.ValidatingType = typeof(DateTime);
             // 
             // maskedTextBox2
             // 
-            maskedTextBox2.Location = new Point(464, 209);
+            maskedTextBox2.Location = new Point(530, 279);
+            maskedTextBox2.Margin = new Padding(3, 4, 3, 4);
             maskedTextBox2.Mask = "(00) 00000-9999";
             maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(100, 23);
+            maskedTextBox2.Size = new Size(114, 27);
             maskedTextBox2.TabIndex = 4;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(59, 105);
+            textBoxEmail.Location = new Point(67, 140);
+            textBoxEmail.Margin = new Padding(3, 4, 3, 4);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(248, 23);
+            textBoxEmail.Size = new Size(283, 27);
             textBoxEmail.TabIndex = 5;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(59, 197);
+            comboBox1.Location = new Point(67, 263);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(248, 23);
+            comboBox1.Size = new Size(283, 28);
             comboBox1.TabIndex = 6;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(59, 241);
+            comboBox2.Location = new Point(67, 321);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(248, 23);
+            comboBox2.Size = new Size(283, 28);
             comboBox2.TabIndex = 7;
             // 
             // checkBoxSim
             // 
             checkBoxSim.AutoSize = true;
-            checkBoxSim.Location = new Point(619, 209);
+            checkBoxSim.Location = new Point(707, 279);
+            checkBoxSim.Margin = new Padding(3, 4, 3, 4);
             checkBoxSim.Name = "checkBoxSim";
-            checkBoxSim.Size = new Size(46, 19);
+            checkBoxSim.Size = new Size(56, 24);
             checkBoxSim.TabIndex = 8;
             checkBoxSim.Text = "Sim";
             checkBoxSim.UseVisualStyleBackColor = true;
@@ -142,9 +151,10 @@
             // checkBoxNao
             // 
             checkBoxNao.AutoSize = true;
-            checkBoxNao.Location = new Point(671, 209);
+            checkBoxNao.Location = new Point(767, 279);
+            checkBoxNao.Margin = new Padding(3, 4, 3, 4);
             checkBoxNao.Name = "checkBoxNao";
-            checkBoxNao.Size = new Size(48, 19);
+            checkBoxNao.Size = new Size(59, 24);
             checkBoxNao.TabIndex = 9;
             checkBoxNao.Text = "Não";
             checkBoxNao.UseVisualStyleBackColor = true;
@@ -153,18 +163,18 @@
             // 
             labelNome.AutoSize = true;
             labelNome.BackColor = SystemColors.AppWorkspace;
-            labelNome.Location = new Point(59, 43);
+            labelNome.Location = new Point(67, 57);
             labelNome.Name = "labelNome";
-            labelNome.Size = new Size(40, 15);
+            labelNome.Size = new Size(50, 20);
             labelNome.TabIndex = 10;
             labelNome.Text = "Nome";
             // 
             // labelNomeSocial
             // 
             labelNomeSocial.AutoSize = true;
-            labelNomeSocial.Location = new Point(59, 131);
+            labelNomeSocial.Location = new Point(67, 175);
             labelNomeSocial.Name = "labelNomeSocial";
-            labelNomeSocial.Size = new Size(73, 15);
+            labelNomeSocial.Size = new Size(92, 20);
             labelNomeSocial.TabIndex = 11;
             labelNomeSocial.Text = "Nome social";
             // 
@@ -172,167 +182,174 @@
             // 
             labelEmail.AutoSize = true;
             labelEmail.BackColor = SystemColors.ActiveBorder;
-            labelEmail.Location = new Point(59, 87);
+            labelEmail.Location = new Point(67, 116);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(36, 15);
+            labelEmail.Size = new Size(46, 20);
             labelEmail.TabIndex = 12;
             labelEmail.Text = "Email";
             // 
             // labelGenero
             // 
             labelGenero.AutoSize = true;
-            labelGenero.Location = new Point(59, 179);
+            labelGenero.Location = new Point(67, 239);
             labelGenero.Name = "labelGenero";
-            labelGenero.Size = new Size(45, 15);
+            labelGenero.Size = new Size(57, 20);
             labelGenero.TabIndex = 13;
             labelGenero.Text = "Genero";
             // 
             // labelEtnia
             // 
             labelEtnia.AutoSize = true;
-            labelEtnia.Location = new Point(59, 223);
+            labelEtnia.Location = new Point(67, 297);
             labelEtnia.Name = "labelEtnia";
-            labelEtnia.Size = new Size(33, 15);
+            labelEtnia.Size = new Size(42, 20);
             labelEtnia.TabIndex = 14;
             labelEtnia.Text = "Etnia";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(618, 194);
+            label1.Location = new Point(706, 259);
             label1.Name = "label1";
-            label1.Size = new Size(75, 15);
+            label1.Size = new Size(96, 20);
             label1.TabIndex = 15;
             label1.Text = "É estrangeiro";
             // 
             // labelDataNascimento
             // 
             labelDataNascimento.AutoSize = true;
-            labelDataNascimento.Location = new Point(337, 191);
+            labelDataNascimento.Location = new Point(385, 255);
             labelDataNascimento.Name = "labelDataNascimento";
-            labelDataNascimento.Size = new Size(114, 15);
+            labelDataNascimento.Size = new Size(145, 20);
             labelDataNascimento.TabIndex = 16;
             labelDataNascimento.Text = "Data de Nascimento";
             // 
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.Location = new Point(463, 191);
+            labelTelefone.Location = new Point(529, 255);
             labelTelefone.Name = "labelTelefone";
-            labelTelefone.Size = new Size(51, 15);
+            labelTelefone.Size = new Size(66, 20);
             labelTelefone.TabIndex = 17;
             labelTelefone.Text = "Telefone";
             // 
             // textBoxLagradouro
             // 
-            textBoxLagradouro.Location = new Point(337, 29);
+            textBoxLagradouro.Location = new Point(385, 39);
+            textBoxLagradouro.Margin = new Padding(3, 4, 3, 4);
             textBoxLagradouro.Name = "textBoxLagradouro";
-            textBoxLagradouro.Size = new Size(270, 23);
+            textBoxLagradouro.Size = new Size(308, 27);
             textBoxLagradouro.TabIndex = 18;
             // 
             // textBoxNumero
             // 
-            textBoxNumero.Location = new Point(619, 29);
+            textBoxNumero.Location = new Point(707, 39);
+            textBoxNumero.Margin = new Padding(3, 4, 3, 4);
             textBoxNumero.Name = "textBoxNumero";
-            textBoxNumero.Size = new Size(100, 23);
+            textBoxNumero.Size = new Size(114, 27);
             textBoxNumero.TabIndex = 19;
             // 
             // textBoxComplemento
             // 
-            textBoxComplemento.Location = new Point(619, 73);
+            textBoxComplemento.Location = new Point(707, 97);
+            textBoxComplemento.Margin = new Padding(3, 4, 3, 4);
             textBoxComplemento.Name = "textBoxComplemento";
-            textBoxComplemento.Size = new Size(100, 23);
+            textBoxComplemento.Size = new Size(114, 27);
             textBoxComplemento.TabIndex = 20;
             // 
             // textBoxBairro
             // 
-            textBoxBairro.Location = new Point(337, 73);
+            textBoxBairro.Location = new Point(385, 97);
+            textBoxBairro.Margin = new Padding(3, 4, 3, 4);
             textBoxBairro.Name = "textBoxBairro";
-            textBoxBairro.Size = new Size(270, 23);
+            textBoxBairro.Size = new Size(308, 27);
             textBoxBairro.TabIndex = 21;
             // 
             // textBoxMunicipio
             // 
-            textBoxMunicipio.Location = new Point(337, 114);
+            textBoxMunicipio.Location = new Point(385, 152);
+            textBoxMunicipio.Margin = new Padding(3, 4, 3, 4);
             textBoxMunicipio.Name = "textBoxMunicipio";
-            textBoxMunicipio.Size = new Size(270, 23);
+            textBoxMunicipio.Size = new Size(308, 27);
             textBoxMunicipio.TabIndex = 22;
             // 
             // textBoxEstado
             // 
-            textBoxEstado.Location = new Point(619, 114);
+            textBoxEstado.Location = new Point(707, 152);
+            textBoxEstado.Margin = new Padding(3, 4, 3, 4);
             textBoxEstado.Name = "textBoxEstado";
-            textBoxEstado.Size = new Size(100, 23);
+            textBoxEstado.Size = new Size(114, 27);
             textBoxEstado.TabIndex = 23;
             // 
             // maskedTextBoxCep
             // 
-            maskedTextBoxCep.Location = new Point(337, 163);
+            maskedTextBoxCep.Location = new Point(385, 217);
+            maskedTextBoxCep.Margin = new Padding(3, 4, 3, 4);
             maskedTextBoxCep.Mask = "00000-000";
             maskedTextBoxCep.Name = "maskedTextBoxCep";
-            maskedTextBoxCep.Size = new Size(61, 23);
+            maskedTextBoxCep.Size = new Size(69, 27);
             maskedTextBoxCep.TabIndex = 24;
             // 
             // labelLagradouro
             // 
             labelLagradouro.AutoSize = true;
-            labelLagradouro.Location = new Point(337, 11);
+            labelLagradouro.Location = new Point(385, 15);
             labelLagradouro.Name = "labelLagradouro";
-            labelLagradouro.Size = new Size(68, 15);
+            labelLagradouro.Size = new Size(86, 20);
             labelLagradouro.TabIndex = 25;
             labelLagradouro.Text = "Lagradouro";
             // 
             // labelComplemento
             // 
             labelComplemento.AutoSize = true;
-            labelComplemento.Location = new Point(619, 55);
+            labelComplemento.Location = new Point(707, 73);
             labelComplemento.Name = "labelComplemento";
-            labelComplemento.Size = new Size(84, 15);
+            labelComplemento.Size = new Size(104, 20);
             labelComplemento.TabIndex = 26;
             labelComplemento.Text = "Complemento";
             // 
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Location = new Point(619, 11);
+            labelNumero.Location = new Point(707, 15);
             labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(51, 15);
+            labelNumero.Size = new Size(63, 20);
             labelNumero.TabIndex = 27;
             labelNumero.Text = "Número";
             // 
             // labelEstado
             // 
             labelEstado.AutoSize = true;
-            labelEstado.Location = new Point(619, 99);
+            labelEstado.Location = new Point(707, 132);
             labelEstado.Name = "labelEstado";
-            labelEstado.Size = new Size(42, 15);
+            labelEstado.Size = new Size(54, 20);
             labelEstado.TabIndex = 28;
             labelEstado.Text = "Estado";
             // 
             // labelMunicipio
             // 
             labelMunicipio.AutoSize = true;
-            labelMunicipio.Location = new Point(337, 99);
+            labelMunicipio.Location = new Point(385, 132);
             labelMunicipio.Name = "labelMunicipio";
-            labelMunicipio.Size = new Size(61, 15);
+            labelMunicipio.Size = new Size(75, 20);
             labelMunicipio.TabIndex = 29;
             labelMunicipio.Text = "Municipio";
             // 
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.Location = new Point(337, 55);
+            labelBairro.Location = new Point(385, 73);
             labelBairro.Name = "labelBairro";
-            labelBairro.Size = new Size(38, 15);
+            labelBairro.Size = new Size(49, 20);
             labelBairro.TabIndex = 30;
             labelBairro.Text = "Bairro";
             // 
             // labelCep
             // 
             labelCep.AutoSize = true;
-            labelCep.Location = new Point(337, 147);
+            labelCep.Location = new Point(385, 196);
             labelCep.Name = "labelCep";
-            labelCep.Size = new Size(28, 15);
+            labelCep.Size = new Size(34, 20);
             labelCep.TabIndex = 31;
             labelCep.Text = "CEP";
             // 
@@ -361,9 +378,11 @@
             groupBox1.Controls.Add(maskedTextBoxCep);
             groupBox1.Controls.Add(labelComplemento);
             groupBox1.Controls.Add(maskedTextBox1);
-            groupBox1.Location = new Point(46, 32);
+            groupBox1.Location = new Point(53, 43);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(834, 312);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(953, 416);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             // 
@@ -371,16 +390,16 @@
             // 
             labelRetorno.AutoSize = true;
             labelRetorno.BackColor = SystemColors.ButtonHighlight;
-            labelRetorno.Location = new Point(203, 263);
+            labelRetorno.Location = new Point(232, 351);
             labelRetorno.Name = "labelRetorno";
-            labelRetorno.Size = new Size(0, 15);
+            labelRetorno.Size = new Size(0, 20);
             labelRetorno.TabIndex = 33;
             // 
             // CriarClientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1329, 450);
+            ClientSize = new Size(1519, 600);
             Controls.Add(labelEtnia);
             Controls.Add(labelGenero);
             Controls.Add(labelEmail);
@@ -389,10 +408,11 @@
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(textBoxEmail);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxNomeSocial);
             Controls.Add(textBoxNomeCliente);
             Controls.Add(button1);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CriarClientes";
             Text = "Form1";
             groupBox1.ResumeLayout(false);
@@ -405,7 +425,7 @@
 
         private Button button1;
         private TextBox textBoxNomeCliente;
-        private TextBox textBox2;
+        private TextBox textBoxNomeSocial;
         private MaskedTextBox maskedTextBox1;
         private MaskedTextBox maskedTextBox2;
         private TextBox textBoxEmail;

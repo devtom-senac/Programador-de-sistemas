@@ -3,12 +3,52 @@ namespace CadastroCliente
     public partial class CriarClientes : Form
     {
         private readonly List<Cliente> Clientes = [];
-
-        private bool validarCampoVazioOuNulo(string texto)
+        
+        //Metodo para validar se o campo digitos vazios ou é nulo
+        private bool ValidarCampo(string texto, string nomeCampo)
         {
-            return string.IsNullOrEmpty(texto);
-            labelRetorno.Text = "erro";
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                labelRetorno.Text = "O campo não pode estar vazio ou conter apenas espaços em branco.";
+                return false; // Campo inválido
+            }
+            return true; // Campo válido
         }
+
+        //Metodo para campos que não podem ter numeros
+        private bool ValidarSemNumeros(string texto, string nomeCampo)
+        {
+            if (texto.Any(char.IsDigit))
+            {
+                labelRetorno.Text = "O campo " + nomeCampo + " não pode conter números.";
+                return false; // Campo inválido
+            }
+            return true; // Campo válido
+        }
+
+        //Metodo para campos que só podem ter numeros
+        private bool ValidarApenasNumeros(string texto, string nomeCampo)
+        {
+            if (!texto.All(char.IsDigit))
+            {
+                labelRetorno.Text = "O campo " + nomeCampo + " deve conter apenas números.";
+                return false; // Campo inválido
+            }
+            return true; // Campo válido
+        }
+
+        //Metodo para validar o email 
+        private bool ValidarEmail(string email)
+        {
+            if (!email.Contains("@") || !email.Contains("."))
+            {
+                labelRetorno.Text = "O email deve estar em um formato válido (ex: usuario@gmail.com).";
+                return false; // Campo inválido
+            }
+            return true; // Campo válido
+        }
+
+
 
         public CriarClientes()
         {
@@ -32,40 +72,41 @@ namespace CadastroCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //metodo para validar o email vendo se não existe um 
-            //para o id, criar um metodo que busque o numero do maior id,e o novo sera a soma dele mais 1
-            if (validarCampoVazioOuNulo(textBoxNomeCliente.Text) || textBoxNomeCliente.Text.Any(char.IsNumber))
+            if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "nome do cliente" )) 
             {
-              
-              return;
-            }
-
-           
-
-
-            if (string.IsNullOrWhiteSpace(textBoxEmail.Text) || !textBoxEmail.Text.Contains("@"))
-            {
-                labelRetorno.Text = "Digite um email válido ex: usuario@gmail.com";
-                textBoxEmail.Focus();
+                textBoxNomeCliente.Focus();
                 return;
-            } 
+            }        
 
-            if (string.IsNullOrEmpty(textBoxLagradouro.Text))
+            if (!ValidarCampo(textBoxLagradouro.Text, "Logradouro"))
             {
-
+                textBoxLagradouro.Focus();
+                return;
             }
 
-
-
-            EnderecoCliente novoEndereco = new()
+            if (!ValidarCampo(textBoxBairro.Text, "Bairro"))
             {
-               
-            };
+                textBoxBairro.Focus();
+                return;
+            }
 
-            Cliente novoCliente = new()
+            if (!ValidarCampo(textBoxMunicipio.Text, "Município"))
             {
+                textBoxMunicipio.Focus();
+                return;
+            }
 
-            };
+            if (!ValidarCampo(textBoxNumero.Text, "Número"))
+            {
+                textBoxNumero.Focus();
+                return;
+            }
+
+            if (!ValidarCampo(textBoxEstado.Text, "Estado"))
+            {
+                textBoxEstado.Focus();
+                return;
+            }
         }
     }
 
