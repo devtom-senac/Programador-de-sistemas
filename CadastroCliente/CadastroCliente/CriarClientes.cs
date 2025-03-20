@@ -9,7 +9,7 @@ namespace CadastroCliente
         {
             if (string.IsNullOrWhiteSpace(texto))
             {
-                labelRetorno.Text = "O campo não pode estar vazio ou conter apenas espaços em branco.";
+                labelRetorno.Text = "O campo" + nomeCampo + "não pode estar vazio ou conter apenas espaços em branco.";
                 return false; // Campo inválido
             }
             return true; // Campo válido
@@ -48,18 +48,17 @@ namespace CadastroCliente
             return true; // Campo válido
         }
 
-        private bool ValidarNumeroUnico(string numero)
+        //private bool ValidarNumeroUnico(string numero)
+
+        private bool ValidarNascimento(string data)
         {
-            // Verifica se já existe um cliente com o mesmo número
-            bool numeroExistente = Cliente.Any(cliente => cliente.Endereco.Numero == numero);
-            if (numeroExistente)
+            if (DateTime.TryParse(data, out DateTime dataNascimento) && dataNascimento <= DateTime.Now)
             {
-                labelRetorno.Text = "O número informado já está cadastrado.";
+                labelRetorno.Text = "Data inválida! Use o formato 00/00/0000 e verifique se não é futura.";
                 return false;
             }
             return true;
         }
-
         public CriarClientes()
         {
             InitializeComponent();
@@ -81,65 +80,83 @@ namespace CadastroCliente
             //Clientes.Add(heverton);
         }
 
+        private bool ValidarNumeroUnico(string valor, string tipo, List<Cliente> clientes)
+        {
+            if (tipo == "Email" && clientes.Any(c => c.Email == valor))
+            {
+                labelRetorno.Text = "Erro: E-mail já cadastrado.";
+                return false; // Valor duplicado
+            }
+
+            if (tipo == "Telefone" && clientes.Any(c => c.Telefone == valor))
+            {
+                labelRetorno.Text = "Erro: Telefone já cadastrado.";
+                return false; // Valor duplicado
+            }
+
+            return true; // Valor único
+        }
+
+        private int GerarNovoId(List<Cliente> clientes)
+        {
+            if (clientes.Count == 0)
+            {
+                return 1; // Primeiro ID
+            }
+            return clientes.Max(c => c.Id) + 1; // Último ID + 1
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "Nome do cliente"))
+            // Validação do nome
+            if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "Nome do Cliente"))
             {
                 textBoxNomeCliente.Focus();
                 return;
             }
 
-            // Validação para endereço
-            if (!ValidarCampo(textBoxLagradouro.Text, "Logradouro"))
-            {
-                textBoxLagradouro.Focus();
-                return;
-            }
-
-            if (!ValidarCampo(textBoxBairro.Text, "Bairro"))
-            {
-                textBoxBairro.Focus();
-                return;
-            }
-
-            if (!ValidarCampo(textBoxMunicipio.Text, "Município") || !ValidarCampo(textBoxMunicipio.Text, "Município"))
-            {
-                textBoxMunicipio.Focus();
-                return;
-            }
-
-            if (!ValidarCampo(textBoxNumero.Text,"Campo do Número"))
-            {
-                textBoxNumero.Focus();
-                return;
-            }
-
-            if (!ValidarCampo(textBoxEstado.Text, "Estado"))
-            {
-                textBoxEstado.Focus();
-                return;
-            }
-
-            if (!ValidarApenasNumeros(maskedTextBoxCep.Text, "o campo CEP"))
-            {
-                maskedTextBoxCep.Focus();
-                return;
-            }
-
-            if (!ValidarCampo(textBoxEmail.Text, "Email") || !ValidarEmail(textBoxEmail.Text))
+            // Validação do e-mail
+            if (!ValidarCampo(textBoxEmail.Text, "E-mail") || !ValidarEmail(textBoxEmail.Text) || !ValidarNumeroUnico(textBoxEmail.Text, "Email", Clientes))
             {
                 textBoxEmail.Focus();
                 return;
             }
 
-            if (!ValidarApenasNumeros(maskedTextBoxTelefone.Text, "Telefone"))
+            // Validação do telefone
+            if (!ValidarCampo(maskedTextBoxTelefone.Text, "Telefone") || !ValidarApenasNumeros(maskedTextBoxTelefone.Text, "Telefone") || !ValidarNumeroUnico(maskedTextBoxTelefone.Text, "Telefone", Clientes))
             {
                 maskedTextBoxTelefone.Focus();
                 return;
             }
 
-            
+            // Validação da data de nascimento
+            if (!ValidarCampo(maskedTextBoxData.Text, "Data de Nascimento") || !ValidarNascimento(maskedTextBoxData.Text))
+            {
+                maskedTextBoxData.Focus();
+                return;
+            }
 
+            // Gera um novo ID único
+            int novoId = GerarNovoId(Clientes);
+
+            // Cria o novo cliente
+            Cliente novoCliente = new Cliente
+            {
+                Id = novoId, // Usa o ID gerado
+                Nome = textBoxNomeCliente.Text,
+                Email = textBoxEmail.Text,
+                Telefone = maskedTextBoxTelefone.Text,
+                DataNascimento = maskedTextBoxData.Text
+                // Adicione os outros campos aqui
+            };
+
+            // Adiciona o novo cliente à lista
+            Clientes.Add(novoCliente);
+
+            // Mensagem de sucesso
+            labelRetorno.Text = "Cliente cadastrado com sucesso!";
         }
     }
 
