@@ -11,10 +11,6 @@ namespace CadastroCliente
         Cisgenero,
         Transgenero,
         NaoBinario,
-        Agenero,
-        GeneroFluido,
-        Bigenero,
-        Intergenero,
-        Intersexual
+        Agenero
     }
 }

@@ -101,7 +101,7 @@
             // maskedTextBoxTelefone
             // 
             maskedTextBoxTelefone.Location = new Point(464, 209);
-            maskedTextBoxTelefone.Mask = "(00) 00000-0000";
+            maskedTextBoxTelefone.Mask = "00000000000";
             maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             maskedTextBoxTelefone.Size = new Size(100, 23);
             maskedTextBoxTelefone.TabIndex = 4;
@@ -132,7 +132,7 @@
             // checkBoxSim
             // 
             checkBoxSim.AutoSize = true;
-            checkBoxSim.Location = new Point(619, 209);
+            checkBoxSim.Location = new Point(624, 209);
             checkBoxSim.Name = "checkBoxSim";
             checkBoxSim.Size = new Size(46, 19);
             checkBoxSim.TabIndex = 8;

@@ -55,24 +55,27 @@ namespace CadastroCliente
             if (DateTime.TryParse(data, out DateTime dataNascimento) && dataNascimento <= DateTime.Now)
             {
                 labelRetorno.Text = "Data inválida! Use o formato 00/00/0000 e verifique se não é futura.";
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
         public CriarClientes()
         {
             InitializeComponent();
 
-            EnderecoCliente enderecoRafael = new EnderecoCliente() { Logradouro = "Rua do Rafael", Numero = "10", Bairro = "Jardim do Futebol", Complemento = "casa", CEP = "12345-300", Municipio = "São Paulo", Estado = "SP"};
+            EnderecoCliente enderecoRafael = new EnderecoCliente() { Logradouro = "Rua do Rafael", Numero = "10", Bairro = "Jardim do Futebol", Complemento = "casa", CEP = "12345-300", Municipio = "São Paulo", Estado = "SP" };
 
             Cliente rafael = new Cliente() { Id = 1, Nome = "Rafael Silva", DataNascimento = "31/08/1991", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoRafael, Email = "rafaeljr@gmail.com", Telefone = "11 91020-3040", Genero = GeneroCliente.Cisgenero, Estrangeiro = false };
             Clientes.Add(rafael);
 
-            EnderecoCliente enderecoVanda = new EnderecoCliente() { Logradouro = "Endereço dos pais do Rafael", Numero = "301" };
+            EnderecoCliente enderecoVanda = new EnderecoCliente() { Logradouro = "Endereço dos pais do Rafael", Numero = "301", Bairro = "Jardim dos pais", Complemento = "casa", CEP = "17858-300", Municipio = "São Paulo", Estado = "SP" };
+
             Cliente vanda = new Cliente() { Id = 2, Nome = "Vanda Maria", DataNascimento = "08/03/1958", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoVanda, Email = "vandajr@gmail.com", Telefone = "11 91020-3040", Genero = GeneroCliente.Cisgenero, Estrangeiro = false };
             Clientes.Add(vanda);
 
-            Cliente joao = new Cliente() { Id = 3, Nome = "Joao Sousa", DataNascimento = "14/07/1962", Etnia = EtniaCliente.Preto, Tipo = TipoCliente.PF, Endereco = enderecoVanda };
+            EnderecoCliente enderecoJoao = new EnderecoCliente() { Logradouro = "Endereço dos pais do Rafael", Numero = "301", Bairro = "Jardim dos pais", Complemento = "casa", CEP = "17858-300", Municipio = "São Paulo", Estado = "SP" };
+
+            Cliente joao = new Cliente() { Id = 3, Nome = "Joao Sousa", DataNascimento = "14/07/1962", Etnia = EtniaCliente.Preto, Tipo = TipoCliente.PF, Endereco = enderecoJoao };
             Clientes.Add(joao);
 
             //EnderecoCliente enderecoHeverton = new EnderecoCliente() { Logradouro = "Orcar Freire", Numero = "1012" };
@@ -82,28 +85,28 @@ namespace CadastroCliente
 
         private bool ValidarNumeroUnico(string valor, string tipo, List<Cliente> clientes)
         {
-            if (tipo == "Email" && clientes.Any(c => c.Email == valor))
+            if (tipo == "Email" && clientes.Any(cliente => cliente.Email == valor))
             {
                 labelRetorno.Text = "Erro: E-mail já cadastrado.";
-                return false; // Valor duplicado
+                return false; 
             }
 
             if (tipo == "Telefone" && clientes.Any(c => c.Telefone == valor))
             {
                 labelRetorno.Text = "Erro: Telefone já cadastrado.";
-                return false; // Valor duplicado
+                return false; 
             }
 
-            return true; // Valor único
+            return true; 
         }
 
         private int GerarNovoId(List<Cliente> clientes)
         {
             if (clientes.Count == 0)
             {
-                return 1; // Primeiro ID
+                return 1; 
             }
-            return clientes.Max(c => c.Id) + 1; // Último ID + 1
+            return clientes.Max(cliente => cliente.Id) + 1; 
         }
 
 
