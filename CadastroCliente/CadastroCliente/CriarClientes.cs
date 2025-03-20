@@ -48,18 +48,29 @@ namespace CadastroCliente
             return true; // Campo válido
         }
 
-
+        private bool ValidarNumeroUnico(string numero)
+        {
+            // Verifica se já existe um cliente com o mesmo número
+            bool numeroExistente = Cliente.Any(cliente => cliente.Endereco.Numero == numero);
+            if (numeroExistente)
+            {
+                labelRetorno.Text = "O número informado já está cadastrado.";
+                return false;
+            }
+            return true;
+        }
 
         public CriarClientes()
         {
             InitializeComponent();
 
-            EnderecoCliente enderecoRafael = new EnderecoCliente() { Logradouro = "Endereço do Rafael", Numero = "10",  };
-            Cliente rafael = new Cliente() { Id = 1, Nome = "Rafael Silva", DataNascimento = "31/08/1991", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoRafael };
+            EnderecoCliente enderecoRafael = new EnderecoCliente() { Logradouro = "Rua do Rafael", Numero = "10", Bairro = "Jardim do Futebol", Complemento = "casa", CEP = "12345-300", Municipio = "São Paulo", Estado = "SP"};
+
+            Cliente rafael = new Cliente() { Id = 1, Nome = "Rafael Silva", DataNascimento = "31/08/1991", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoRafael, Email = "rafaeljr@gmail.com", Telefone = "11 91020-3040", Genero = GeneroCliente.Cisgenero, Estrangeiro = false };
             Clientes.Add(rafael);
 
             EnderecoCliente enderecoVanda = new EnderecoCliente() { Logradouro = "Endereço dos pais do Rafael", Numero = "301" };
-            Cliente vanda = new Cliente() { Id = 2, Nome = "Vanda Maria", DataNascimento = "08/03/1958", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoVanda };
+            Cliente vanda = new Cliente() { Id = 2, Nome = "Vanda Maria", DataNascimento = "08/03/1958", Etnia = EtniaCliente.Branco, Tipo = TipoCliente.PF, Endereco = enderecoVanda, Email = "vandajr@gmail.com", Telefone = "11 91020-3040", Genero = GeneroCliente.Cisgenero, Estrangeiro = false };
             Clientes.Add(vanda);
 
             Cliente joao = new Cliente() { Id = 3, Nome = "Joao Sousa", DataNascimento = "14/07/1962", Etnia = EtniaCliente.Preto, Tipo = TipoCliente.PF, Endereco = enderecoVanda };
@@ -72,12 +83,13 @@ namespace CadastroCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "nome do cliente" )) 
+            if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "Nome do cliente"))
             {
                 textBoxNomeCliente.Focus();
                 return;
-            }        
+            }
 
+            // Validação para endereço
             if (!ValidarCampo(textBoxLagradouro.Text, "Logradouro"))
             {
                 textBoxLagradouro.Focus();
@@ -90,13 +102,13 @@ namespace CadastroCliente
                 return;
             }
 
-            if (!ValidarCampo(textBoxMunicipio.Text, "Município"))
+            if (!ValidarCampo(textBoxMunicipio.Text, "Município") || !ValidarCampo(textBoxMunicipio.Text, "Município"))
             {
                 textBoxMunicipio.Focus();
                 return;
             }
 
-            if (!ValidarCampo(textBoxNumero.Text, "Número"))
+            if (!ValidarCampo(textBoxNumero.Text,"Campo do Número"))
             {
                 textBoxNumero.Focus();
                 return;
@@ -107,6 +119,27 @@ namespace CadastroCliente
                 textBoxEstado.Focus();
                 return;
             }
+
+            if (!ValidarApenasNumeros(maskedTextBoxCep.Text, "o campo CEP"))
+            {
+                maskedTextBoxCep.Focus();
+                return;
+            }
+
+            if (!ValidarCampo(textBoxEmail.Text, "Email") || !ValidarEmail(textBoxEmail.Text))
+            {
+                textBoxEmail.Focus();
+                return;
+            }
+
+            if (!ValidarApenasNumeros(maskedTextBoxTelefone.Text, "Telefone"))
+            {
+                maskedTextBoxTelefone.Focus();
+                return;
+            }
+
+            
+
         }
     }
 
