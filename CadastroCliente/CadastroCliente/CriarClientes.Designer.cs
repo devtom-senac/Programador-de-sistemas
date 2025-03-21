@@ -62,12 +62,15 @@
             labelCep = new Label();
             groupBox1 = new GroupBox();
             labelRetorno = new Label();
+            dataGridView1 = new DataGridView();
+            button2 = new Button();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(348, 368);
+            button1.Location = new Point(568, 368);
             button1.Name = "button1";
             button1.Size = new Size(212, 50);
             button1.TabIndex = 0;
@@ -339,6 +342,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.AppWorkspace;
+            groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(labelRetorno);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(labelTelefone);
@@ -363,7 +367,7 @@
             groupBox1.Controls.Add(maskedTextBoxData);
             groupBox1.Location = new Point(46, 32);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(834, 312);
+            groupBox1.Size = new Size(1183, 312);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             // 
@@ -376,11 +380,30 @@
             labelRetorno.Size = new Size(0, 15);
             labelRetorno.TabIndex = 33;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(772, 11);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(368, 267);
+            dataGridView1.TabIndex = 34;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(955, 368);
+            button2.Name = "button2";
+            button2.Size = new Size(135, 34);
+            button2.TabIndex = 35;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // CriarClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1329, 450);
+            Controls.Add(button2);
             Controls.Add(labelEtnia);
             Controls.Add(labelGenero);
             Controls.Add(labelEmail);
@@ -397,6 +420,7 @@
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -437,5 +461,7 @@
         private Label labelCep;
         private GroupBox groupBox1;
         private Label labelRetorno;
+        private DataGridView dataGridView1;
+        private Button button2;
     }
 }

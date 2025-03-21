@@ -3,7 +3,8 @@ namespace CadastroCliente
     public partial class CriarClientes : Form
     {
         private readonly List<Cliente> Clientes = [];
-        
+        private readonly BindingSource BindingSource = [];
+
         //Metodo para validar se o campo digitos vazios ou é nulo
         private bool ValidarCampo(string texto, string nomeCampo)
         {
@@ -78,6 +79,9 @@ namespace CadastroCliente
             Cliente joao = new Cliente() { Id = 3, Nome = "Joao Sousa", DataNascimento = "14/07/1962", Etnia = EtniaCliente.Preto, Tipo = TipoCliente.PF, Endereco = enderecoJoao };
             Clientes.Add(joao);
 
+            BindingSource.DataSource = Clientes;
+            dataGridView1.DataSource = BindingSource;
+
             //EnderecoCliente enderecoHeverton = new EnderecoCliente() { Logradouro = "Orcar Freire", Numero = "1012" };
             //Cliente heverton = new Cliente() { Id = 3, Nome = "Heverton Nascimento", DataNascimento = "10/12/2005", Etnia = EtniaCliente.Preto, Tipo = TipoCliente.PF, Endereco = enderecoHeverton };
             //Clientes.Add(heverton);
@@ -88,25 +92,25 @@ namespace CadastroCliente
             if (tipo == "Email" && clientes.Any(cliente => cliente.Email == valor))
             {
                 labelRetorno.Text = "Erro: E-mail já cadastrado.";
-                return false; 
+                return false;
             }
 
             if (tipo == "Telefone" && clientes.Any(c => c.Telefone == valor))
             {
                 labelRetorno.Text = "Erro: Telefone já cadastrado.";
-                return false; 
+                return false;
             }
 
-            return true; 
+            return true;
         }
 
         private int GerarNovoId(List<Cliente> clientes)
         {
             if (clientes.Count == 0)
             {
-                return 1; 
+                return 1;
             }
-            return clientes.Max(cliente => cliente.Id) + 1; 
+            return clientes.Max(cliente => cliente.Id) + 1;
         }
 
 
@@ -144,6 +148,8 @@ namespace CadastroCliente
             // Gera um novo ID único
             int novoId = GerarNovoId(Clientes);
 
+
+
             // Cria o novo cliente
             Cliente novoCliente = new Cliente
             {
@@ -153,6 +159,8 @@ namespace CadastroCliente
                 Telefone = maskedTextBoxTelefone.Text,
                 DataNascimento = maskedTextBoxData.Text
                 // Adicione os outros campos aqui
+
+
             };
 
             // Adiciona o novo cliente à lista
@@ -161,9 +169,17 @@ namespace CadastroCliente
             // Mensagem de sucesso
             labelRetorno.Text = "Cliente cadastrado com sucesso!";
         }
-    }
+           
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BindingSource.ResetBindings(false);
+
+        }
+    }
 }
+
+
 
 
 
