@@ -18,8 +18,8 @@ namespace CadastroCliente
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string NomeSocial { get; set; }
-        public bool Estrangeiro { get; set; }    
+        public bool Estrangeiro { get; set; }
 
-       
+        
     }
 }
