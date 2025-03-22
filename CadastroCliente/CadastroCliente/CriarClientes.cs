@@ -5,6 +5,7 @@ namespace CadastroCliente
         private readonly List<Cliente> Clientes = [];
         private readonly BindingSource BindingSource = [];
 
+
         public CriarClientes()
         {
             InitializeComponent();
@@ -97,7 +98,6 @@ namespace CadastroCliente
             dataGridView1.DataSource = BindingSource;
         }
 
-
         // Método para validar se o campo está vazio ou é nulo
         private bool ValidarCampo(string texto, string nomeCampo)
         {
@@ -106,7 +106,7 @@ namespace CadastroCliente
                 labelRetorno.Text = "O campo " + nomeCampo + " não pode estar vazio ou conter apenas espaços em branco.";
                 return false; // Campo inválido
             }
-            return true; 
+            return true;
         }
 
         // Método para validar campos que não podem conter números
@@ -115,20 +115,9 @@ namespace CadastroCliente
             if (texto.Any(char.IsDigit))
             {
                 labelRetorno.Text = "O campo " + nomeCampo + " não pode conter números.";
-                return false; // Campo inválido
+                return false;
             }
-            return true; 
-        }
-
-        // Método para validar campos que só podem conter números
-        private bool ValidarApenasNumeros(string texto, string nomeCampo)
-        {
-            if (!texto.All(char.IsDigit))
-            {
-                labelRetorno.Text = "O campo " + nomeCampo + " deve conter apenas números.";
-                return false; // Campo inválido
-            }
-            return true; 
+            return true;
         }
 
         // Método para validar o formato do e-mail
@@ -139,7 +128,7 @@ namespace CadastroCliente
                 labelRetorno.Text = "O e-mail deve estar em um formato válido (ex: usuario@gmail.com).";
                 return false; // Campo inválido
             }
-            return true; 
+            return true;
         }
 
         // Método para validar a data de nascimento
@@ -150,31 +139,13 @@ namespace CadastroCliente
                 labelRetorno.Text = "Data inválida! Use o formato 00/00/0000 e verifique se não é futura.";
                 return false; // Campo inválido
             }
-            return true; 
-        }
-
-        private bool ValidarNumeroUnico(string valor, string tipo, List<Cliente> clientes)
-        {
-            if (tipo == "Email" && clientes.Any(cliente => cliente.Email == valor))
-            {
-                labelRetorno.Text = "Erro: E-mail já cadastrado.";
-                return false;
-            }
-
-            if (tipo == "Telefone" && clientes.Any(c => c.Telefone == valor))
-            {
-                labelRetorno.Text = "Erro: Telefone já cadastrado.";
-                return false;
-            }
-
             return true;
         }
 
-        
         // Método para validar o CheckBox 
         private bool ValidarCheckBoxEstrangeiro(CheckBox checkBoxSim, CheckBox checkBoxNao)
         {
-            
+
             if (checkBoxSim.Checked && checkBoxNao.Checked)
             {
                 labelRetorno.Text = "Selecione apenas uma opção para 'Estrangeiro'.";
@@ -185,62 +156,67 @@ namespace CadastroCliente
             if (!checkBoxSim.Checked && !checkBoxNao.Checked)
             {
                 labelRetorno.Text = "Selecione uma opção para SIM ou NÃO";
-                return false; 
+                return false;
             }
 
-            return true; 
+            return true;
         }
 
-        // Método ID
+        // AREA DE MÉTODOS PRINCIPAIS 
+
+        private bool ValidarEmailUnico(string valor, string tipo, List<Cliente> clientes)
+        {
+            if (tipo == "Email" && clientes.Any(cliente => cliente.Email == valor))
+            {
+                labelRetorno.Text = "Erro: E-mail já cadastrado.";
+                return false;
+            }
+
+            return true;
+        }
+        //TELEFONE
+        private bool ValidarNumeroUnico(string valor, string tipo, List<Cliente> clientes)
+        {
+            if (tipo == "Telefone" && clientes.Any(numero => numero.Telefone == valor))
+            {
+                labelRetorno.Text = "Erro: Telefone já cadastrado.";
+                return false;
+            }
+
+            return true;
+        }
+
+        //ID
         private int GerarNovoId(List<Cliente> clientes)
         {
             return clientes.Count == 0 ? 1 : clientes.Max(cliente => cliente.Id) + 1;
         }
 
-        private bool EmailJaExiste(string email, List<Cliente> clientes)
-        {
-            return clientes.Any(cliente => cliente.Email == email);
-        }
-
-
-
         private void buttonCadastrar_Click_1(object sender, EventArgs e)
         {
-            // Validação do nome
+            //AREA DE VALIDACOES BASICAS 
+
+            // nome
             if (!ValidarCampo(textBoxNomeCliente.Text, "Nome do Cliente") || !ValidarSemNumeros(textBoxNomeCliente.Text, "Nome do Cliente"))
             {
                 textBoxNomeCliente.Focus();
                 return;
             }
 
-            // Validação do e-mail
-            if (!ValidarCampo(textBoxEmail.Text, "E-mail") || !ValidarEmail(textBoxEmail.Text) || !ValidarNumeroUnico(textBoxEmail.Text, "Email", Clientes))
-            {
-                textBoxEmail.Focus();
-                return;
-            }
-
-            // Validação do telefone
-            if (!ValidarCampo(maskedTextBoxTelefone.Text, "Telefone") || !ValidarApenasNumeros(maskedTextBoxTelefone.Text, "Telefone") || !ValidarNumeroUnico(maskedTextBoxTelefone.Text, "Telefone", Clientes))
-            {
-                maskedTextBoxTelefone.Focus();
-                return;
-            }
-
-            // Validação da data de nascimento
+            //  data de nascimento
             if (!ValidarCampo(maskedTextBoxData.Text, "Data de Nascimento") || !ValidarNascimento(maskedTextBoxData.Text))
             {
                 maskedTextBoxData.Focus();
                 return;
             }
 
-            // Validação Estrangeiro
+            // Estrangeiro SIM / NÃO
             if (!ValidarCheckBoxEstrangeiro(checkBoxSim, checkBoxNao))
             {
                 return;
             }
 
-            // Validação Genero
+            // Genero
             if (comboBoxGenero.SelectedItem == null)
             {
                 labelRetorno.Text = "Erro: Selecione um gênero válido.";
@@ -248,21 +224,27 @@ namespace CadastroCliente
                 return;
             }
 
+            // AREA DE VALIDAÇÕES PRINCIPAIS
+
             // Gera um novo ID único
             int novoId = GerarNovoId(Clientes);
 
-            if (EmailJaExiste(textBoxEmail.Text, Clientes))
+            if (!ValidarCampo(textBoxEmail.Text, "E-mail") || !ValidarEmailUnico(textBoxEmail.Text, "Email", Clientes) || !ValidarNumeroUnico(textBoxEmail.Text, "Email", Clientes))
             {
-                labelRetorno.Text = "Erro: E-mail já cadastrado.";
                 textBoxEmail.Focus();
                 return;
             }
 
-            if (!ValidarCampo(maskedTextBoxTelefone.Text, "Telefone") || !ValidarApenasNumeros(maskedTextBoxTelefone.Text, "Telefone"))
+            // telefone
+            if (!ValidarCampo(maskedTextBoxTelefone.Text, "Telefone") || !ValidarNumeroUnico(maskedTextBoxTelefone.Text, "Telefone", Clientes))
             {
                 maskedTextBoxTelefone.Focus();
                 return;
             }
+
+
+            // AREA DE ADICIONAR O NOVO CLIENTE 
+
 
             // Cria o endereço do cliente
             EnderecoCliente endereco = new EnderecoCliente
@@ -284,21 +266,26 @@ namespace CadastroCliente
                 Email = textBoxEmail.Text,
                 Telefone = maskedTextBoxTelefone.Text,
                 DataNascimento = maskedTextBoxData.Text,
-                Genero = (GeneroCliente)comboBoxGenero.SelectedItem, 
-                Etnia = (EtniaCliente)comboBoxEtnia.SelectedItem,    
-                Tipo = (TipoCliente)comboBoxTipo.SelectedItem,      
-                Estrangeiro = checkBoxSim.Checked, 
-                Endereco = endereco 
+                Genero = (GeneroCliente)comboBoxGenero.SelectedItem,
+                Etnia = (EtniaCliente)comboBoxEtnia.SelectedItem,
+                Tipo = (TipoCliente)comboBoxTipo.SelectedItem,
+                Estrangeiro = checkBoxSim.Checked,
+                Endereco = endereco
             };
 
-        
+
             Clientes.Add(novoCliente);
 
-      
+
             BindingSource.ResetBindings(false);
 
-            
+
             labelRetorno.Text = "Cliente cadastrado com sucesso!";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BindingSource.ResetBindings(false);
         }
     }
 }

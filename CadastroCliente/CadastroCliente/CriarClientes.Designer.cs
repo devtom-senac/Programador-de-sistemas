@@ -63,8 +63,8 @@
             groupBox1 = new GroupBox();
             labelTipo = new Label();
             comboBoxTipo = new ComboBox();
-            dataGridView1 = new DataGridView();
             labelRetorno = new Label();
+            dataGridView1 = new DataGridView();
             button2 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -72,8 +72,8 @@
             // 
             // buttonCadastrar
             // 
-            buttonCadastrar.BackColor = Color.DodgerBlue;
-            buttonCadastrar.ForeColor = SystemColors.ControlText;
+            buttonCadastrar.BackColor = Color.MidnightBlue;
+            buttonCadastrar.ForeColor = SystemColors.ControlLight;
             buttonCadastrar.Location = new Point(464, 263);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(159, 43);
@@ -84,14 +84,14 @@
             // 
             // textBoxNomeCliente
             // 
-            textBoxNomeCliente.Location = new Point(59, 61);
+            textBoxNomeCliente.Location = new Point(12, 29);
             textBoxNomeCliente.Name = "textBoxNomeCliente";
             textBoxNomeCliente.Size = new Size(248, 23);
             textBoxNomeCliente.TabIndex = 1;
             // 
             // textBoxNomeSocial
             // 
-            textBoxNomeSocial.Location = new Point(59, 149);
+            textBoxNomeSocial.Location = new Point(12, 117);
             textBoxNomeSocial.Name = "textBoxNomeSocial";
             textBoxNomeSocial.Size = new Size(248, 23);
             textBoxNomeSocial.TabIndex = 2;
@@ -115,7 +115,7 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(59, 105);
+            textBoxEmail.Location = new Point(12, 73);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(248, 23);
             textBoxEmail.TabIndex = 5;
@@ -124,7 +124,7 @@
             // 
             comboBoxGenero.FormattingEnabled = true;
             comboBoxGenero.Items.AddRange(new object[] { "Cisgenero", "Transgenero", "Nao Binario", "Agenero" });
-            comboBoxGenero.Location = new Point(59, 197);
+            comboBoxGenero.Location = new Point(12, 165);
             comboBoxGenero.Name = "comboBoxGenero";
             comboBoxGenero.Size = new Size(248, 23);
             comboBoxGenero.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             comboBoxEtnia.FormattingEnabled = true;
             comboBoxEtnia.Items.AddRange(new object[] { "Branco", "Preto", "Pardo", "Indigena", "Amarelo", "        " });
-            comboBoxEtnia.Location = new Point(59, 241);
+            comboBoxEtnia.Location = new Point(12, 209);
             comboBoxEtnia.Name = "comboBoxEtnia";
             comboBoxEtnia.Size = new Size(248, 23);
             comboBoxEtnia.TabIndex = 7;
@@ -161,8 +161,8 @@
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.BackColor = Color.Silver;
-            labelNome.Location = new Point(59, 43);
+            labelNome.BackColor = Color.DarkGray;
+            labelNome.Location = new Point(12, 11);
             labelNome.Name = "labelNome";
             labelNome.Size = new Size(40, 15);
             labelNome.TabIndex = 10;
@@ -171,8 +171,8 @@
             // labelNomeSocial
             // 
             labelNomeSocial.AutoSize = true;
-            labelNomeSocial.BackColor = SystemColors.ActiveBorder;
-            labelNomeSocial.Location = new Point(59, 131);
+            labelNomeSocial.BackColor = SystemColors.AppWorkspace;
+            labelNomeSocial.Location = new Point(12, 99);
             labelNomeSocial.Name = "labelNomeSocial";
             labelNomeSocial.Size = new Size(73, 15);
             labelNomeSocial.TabIndex = 11;
@@ -181,8 +181,8 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.BackColor = SystemColors.ActiveBorder;
-            labelEmail.Location = new Point(59, 87);
+            labelEmail.BackColor = SystemColors.AppWorkspace;
+            labelEmail.Location = new Point(12, 55);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(36, 15);
             labelEmail.TabIndex = 12;
@@ -191,7 +191,8 @@
             // labelGenero
             // 
             labelGenero.AutoSize = true;
-            labelGenero.Location = new Point(59, 179);
+            labelGenero.BackColor = SystemColors.AppWorkspace;
+            labelGenero.Location = new Point(12, 147);
             labelGenero.Name = "labelGenero";
             labelGenero.Size = new Size(45, 15);
             labelGenero.TabIndex = 13;
@@ -200,7 +201,8 @@
             // labelEtnia
             // 
             labelEtnia.AutoSize = true;
-            labelEtnia.Location = new Point(59, 223);
+            labelEtnia.BackColor = SystemColors.AppWorkspace;
+            labelEtnia.Location = new Point(12, 191);
             labelEtnia.Name = "labelEtnia";
             labelEtnia.Size = new Size(33, 15);
             labelEtnia.TabIndex = 14;
@@ -350,15 +352,25 @@
             // 
             groupBox1.BackColor = SystemColors.AppWorkspace;
             groupBox1.Controls.Add(labelTipo);
+            groupBox1.Controls.Add(labelEtnia);
             groupBox1.Controls.Add(comboBoxTipo);
             groupBox1.Controls.Add(labelRetorno);
+            groupBox1.Controls.Add(labelGenero);
             groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(labelEmail);
             groupBox1.Controls.Add(labelTelefone);
+            groupBox1.Controls.Add(labelNomeSocial);
             groupBox1.Controls.Add(labelCep);
+            groupBox1.Controls.Add(labelNome);
+            groupBox1.Controls.Add(comboBoxEtnia);
             groupBox1.Controls.Add(labelDataNascimento);
+            groupBox1.Controls.Add(comboBoxGenero);
             groupBox1.Controls.Add(labelLagradouro);
+            groupBox1.Controls.Add(textBoxEmail);
             groupBox1.Controls.Add(checkBoxNao);
+            groupBox1.Controls.Add(textBoxNomeSocial);
             groupBox1.Controls.Add(labelBairro);
+            groupBox1.Controls.Add(textBoxNomeCliente);
             groupBox1.Controls.Add(buttonCadastrar);
             groupBox1.Controls.Add(checkBoxSim);
             groupBox1.Controls.Add(textBoxLogradouro);
@@ -374,9 +386,9 @@
             groupBox1.Controls.Add(maskedTextBoxCep);
             groupBox1.Controls.Add(labelComplemento);
             groupBox1.Controls.Add(maskedTextBoxData);
-            groupBox1.Location = new Point(46, 32);
+            groupBox1.Location = new Point(250, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1183, 312);
+            groupBox1.Size = new Size(747, 312);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             // 
@@ -398,6 +410,15 @@
             comboBoxTipo.Size = new Size(248, 23);
             comboBoxTipo.TabIndex = 36;
             // 
+            // labelRetorno
+            // 
+            labelRetorno.AutoSize = true;
+            labelRetorno.BackColor = SystemColors.ButtonHighlight;
+            labelRetorno.Location = new Point(347, 263);
+            labelRetorno.Name = "labelRetorno";
+            labelRetorno.Size = new Size(0, 15);
+            labelRetorno.TabIndex = 33;
+            // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
@@ -411,25 +432,17 @@
             dataGridView1.Size = new Size(1183, 267);
             dataGridView1.TabIndex = 34;
             // 
-            // labelRetorno
-            // 
-            labelRetorno.AutoSize = true;
-            labelRetorno.BackColor = SystemColors.ButtonHighlight;
-            labelRetorno.Location = new Point(347, 263);
-            labelRetorno.Name = "labelRetorno";
-            labelRetorno.Size = new Size(0, 15);
-            labelRetorno.TabIndex = 33;
-            // 
             // button2
             // 
-            button2.BackColor = SystemColors.HotTrack;
-            button2.ForeColor = SystemColors.ControlText;
+            button2.BackColor = Color.Navy;
+            button2.ForeColor = Color.Cornsilk;
             button2.Location = new Point(510, 654);
             button2.Name = "button2";
             button2.Size = new Size(159, 44);
             button2.TabIndex = 35;
             button2.Text = "EXIBIR CLIENTES";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // CriarClientes
             // 
@@ -437,17 +450,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1329, 773);
             Controls.Add(button2);
-            Controls.Add(labelEtnia);
             Controls.Add(dataGridView1);
-            Controls.Add(labelGenero);
-            Controls.Add(labelEmail);
-            Controls.Add(labelNomeSocial);
-            Controls.Add(labelNome);
-            Controls.Add(comboBoxEtnia);
-            Controls.Add(comboBoxGenero);
-            Controls.Add(textBoxEmail);
-            Controls.Add(textBoxNomeSocial);
-            Controls.Add(textBoxNomeCliente);
             Controls.Add(groupBox1);
             Name = "CriarClientes";
             Text = "Form1";
@@ -455,7 +458,6 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
