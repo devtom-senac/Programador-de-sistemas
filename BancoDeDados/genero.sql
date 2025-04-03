@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS genero (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL
+);
+
+SELECT DISTINCT
+    (genero)
+FROM
+    livro;

@@ -1,3 +1,7 @@
+SELECT DISTINCT
+    LOWER(autor)
+FROM
+    livro;
 INSERT INTO autor (
  nome,
     documento

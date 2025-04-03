@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS editora (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+	documento VARCHAR(14) NOT NULL UNIQUE
+);
+
+SELECT DISTINCT
+    (editora)
+FROM
+    livro;

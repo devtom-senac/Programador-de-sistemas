@@ -1,10 +1,11 @@
-create table if not exists empregado (
+/*create table if not exists empregado (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     idade VARCHAR(3) NOT NULL,
-    departamento VARCHAR(100) NOT NULL,
-    salario INT(30)
-);
+    /*id_departamento INT NOT NULL,
+    FOREIGN KEY (id_departamento)
+        REFERENCES departamento (id)
+);*/
 
 /*Inserindo valores na tabela*/
 
@@ -74,8 +75,8 @@ FROM
 WHERE
     departamento = 'Vendas';
 
-/*Use um INNER JOIN para obter uma lista de empregados e seus respectivos departamentos*/
-
+/*4.Use um INNER JOIN para obter uma lista de empregados e seus respectivos departamentos*/
+/*departamento*/
 CREATE TABLE IF NOT EXISTS departamento (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(60) NOT NULL
@@ -88,5 +89,38 @@ VALUES
  ('RH'),
   ('TI'),
    ('Vendas');
+   
+select * from departamento;
+
+/*empregado*/
+CREATE TABLE IF NOT EXISTS empregado (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+	idade INT NOT NULL,
+    id_departamento INT NOT NULL,
+    FOREIGN KEY (id_departamento)
+	  REFERENCES departamento (id)
+);
+
+INSERT INTO empregado (
+nome,
+idade,
+id_departamento)
+values
+('João', 30, 1),
+('Sarah', 28, 2),
+('Miguel', 35, 3),
+('Ana', 27, 2);
+
+/*SELECT * 
+FROM empregado 
+INNER JOIN departamento 
+ON empregado.id_departamento = id_departamento;*/
+ 
+/*SELECT * 
+FROM empregado
+LEFT JOIN departamento
+ON  ;*/
+
 
 
