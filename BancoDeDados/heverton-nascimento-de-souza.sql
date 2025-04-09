@@ -148,16 +148,118 @@ WHERE
     cidade != 'Rio de Janeiro' and nome like 'T%';
 
 SELECT 
+    categoria,
     AVG(preco) 
 FROM
-    produto; 
+    produto group by categoria; 
+
+SELECT
+cliente_id,
+    COUNT(cliente_id)
+FROM
+    pedido
+GROUP BY cliente_id; 
     
 SELECT 
-    COUNT(id) 
+    categoria,
+     SUM(estoque) 
 FROM
-    pedido; 
+    produto
+GROUP BY categoria;
 
-select * from pedido 
+select id from ( SELECT 
+   max(quantidade)
+FROM
+    pedido id);
 
+ SELECT 
+    id,
+    produto_id,
+    quantidade
+FROM
+    pedido
+WHERE
+    quantidade = (SELECT 
+            max(quantidade)
+        FROM
+          pedido);
+          
+INSERT INTO cliente (
+nome,
+cidade,
+idade
+) VALUES 
+('Heverton Souza', 'São Paulo', 19);
 
+INSERT INTO cliente (
+nome,
+cidade,
+idade
+) VALUES 
+('Rafão Volpe', 'Curitiba', 30);
 
+SELECT
+id,
+cidade,
+    COUNT(id)
+FROM
+    cliente
+GROUP BY cidade; 
+
+SELECT 
+    p.nome AS produto, f.nome AS fornecedor
+FROM
+    produto p
+        INNER JOIN
+    fornecedor f ON p.fornecedor_id = f.id  order by fornecedor;
+
+SELECT 
+    p.id AS pedido, c.nome AS cliente, i.nome AS produto, p.data_pedido 
+FROM
+    pedido p
+        JOIN
+    produto i ON p.produto_id = i.id 
+
+     JOIN
+    cliente c ON p.cliente_id = c.id
+     order by data_pedido;
+   
+ SELECT 
+    p.id, c.nome AS cliente, i.nome AS produto, f.nome AS fornecedor
+FROM
+    pedido p
+        JOIN
+    cliente c ON p.cliente_id = c.id
+        JOIN
+    produto i ON p.produto_id = i.id
+        JOIN
+    fornecedor f ON f.id = i.fornecedor_id;
+ 
+ 
+ SELECT 
+    c.nome AS cliente, SUM(quantidade) AS comprados
+FROM
+    pedido p
+        JOIN
+    cliente c ON p.cliente_id = c.id
+GROUP BY p.cliente_id;
+
+SELECT 
+    *
+FROM
+    produto
+WHERE
+   preco > (SELECT 
+            AVG(preco)
+        FROM
+            produto);  
+ 
+UPDATE produto 
+SET 
+    preco = preco * 1.10
+WHERE
+    categoria = 'Eletrônicos';
+ 
+DELETE FROM pedido WHERE cliente_id = 4;
+
+select * from pedido

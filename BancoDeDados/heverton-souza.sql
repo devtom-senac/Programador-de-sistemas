@@ -64,6 +64,8 @@ CREATE TABLE IF NOT EXISTS cliente (
     nome varchar(100) NOT NULL
 );
 
+drop table cliente;
+
 INSERT INTO cliente (
 nome)
 values ('Carlos'), ('Mariana'), ('Pedro'), ('Fernanda');
@@ -91,7 +93,7 @@ VALUES
 SELECT 
     COUNT(id) AS pedido
 FROM
-    pedido; /* <- Preciso estudar melhor o count*/ 
+    pedido; 
     
 SELECT 
     AVG(valor) AS pedido
@@ -108,4 +110,4 @@ FROM pedido AS p
 INNER JOIN cliente AS c
 ON p.id_cliente = c.id;
 
-
+DROP TABLE cliente

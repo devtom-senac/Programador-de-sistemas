@@ -1,14 +1,3 @@
-/*create table if not exists empregado (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    idade VARCHAR(3) NOT NULL,
-    /*id_departamento INT NOT NULL,
-    FOREIGN KEY (id_departamento)
-        REFERENCES departamento (id)
-);*/
-
-/*Inserindo valores na tabela*/
-
 INSERT INTO empregado (
     nome, 
     idade, 
@@ -22,12 +11,16 @@ VALUES
  ('Ana',  '27',  'TI', 62000);
  
  /*Agora vamos buscar o pessoal do TI*/
- SELECT * FROM empregado
-WHERE departamento like 'TI';
-
-/*Vamos descobrir agora quem está ganhando mais de 55 mil*/
  SELECT 
-	nome, salario
+    *
+FROM
+    empregado
+WHERE
+    departamento LIKE 'TI';
+
+/*Agora descobrir quem está ganhando mais de 55 mil*/
+ SELECT 
+    nome, salario
 FROM
     empregado
 WHERE
@@ -45,8 +38,12 @@ SELECT * FROM empregado
 where idade between '28' and '35';
 
 /*Selecionado os que começam com M*/
-SELECT * FROM empregado
-WHERE nome like 'M%';
+SELECT 
+    *
+FROM
+    empregado
+WHERE
+    nome LIKE 'M%';
 
 /*Empregados que não estão no departamento de RH*/
 SELECT 
@@ -54,10 +51,14 @@ SELECT
 FROM
     empregado
 WHERE
-    departamento NOT LIKE 'RH';
+    departamento != 'RH';
 
 /*Número de empregados em cada departamento (FIZ ESTE COM AJUDA DE COLEGAS) */
-SELECT departamento, count(departamento) from empregado group by departamento;
+SELECT 
+    departamento, COUNT(departamento)
+FROM
+    empregado
+GROUP BY departamento; /* group by = agrupar elementos iguais*/
 
 /*Salario médio dos empregados no departamento de TI  (FIZ ESTE COM AJUDA DE COLEGAS*/
 SELECT 
@@ -89,38 +90,83 @@ VALUES
  ('RH'),
   ('TI'),
    ('Vendas');
-   
-select * from departamento;
 
-/*empregado*/
+/*6 */
 CREATE TABLE IF NOT EXISTS empregado (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(60) NOT NULL,
 	idade INT NOT NULL,
+    salario decimal(10) NOT NULL,
     id_departamento INT NOT NULL,
     FOREIGN KEY (id_departamento)
 	  REFERENCES departamento (id)
 );
 
 INSERT INTO empregado (
-nome,
-idade,
-id_departamento)
-values
-('João', 30, 1),
-('Sarah', 28, 2),
-('Miguel', 35, 3),
-('Ana', 27, 2);
-
-/*SELECT * 
-FROM empregado 
-INNER JOIN departamento 
-ON empregado.id_departamento = id_departamento;*/
+    nome, 
+    idade, 
+    salario,
+    id_departamento
+)
+VALUES 
+ ('João', 30, 50000, 1),
+('Sarah', 28, 60000, 2),
+('Miguel', 35, 55000, 3),
+('Ana', 27, 62000, 2);
  
-/*SELECT * 
-FROM empregado
-LEFT JOIN departamento
-ON  ;*/
+select * from empregado;
 
+SELECT
+  e.nome AS Empregado,
+  d.nome AS Departamento
+FROM empregado AS e
+INNER JOIN departamento AS d
+ON e.id_departamento = d.id;
+
+/*SELECT 
+    d.nome AS Departamento, d.nome AS Empregado
+FROM
+    departamento d
+        LEFT LEFT
+    empregado e ON d.id = e.id_departamento;*/
+
+SELECT 
+    *
+FROM
+    empregado
+WHERE
+    salario > (SELECT 
+            AVG(salario)
+        FROM
+            empregado);
+    
+/*SELECT 
+    e.nome AS Empregado, d.nome AS departamento
+FROM
+    empregado e
+WHERE
+    e.id_departamento = (SELECT 
+            e.id_departamento
+        FROM
+            empregado e
+        WHERE
+            nome = 'Sarah');*/
+    
+/*7*/
+INSERT INTO empregado (
+    nome, 
+    idade, 
+    salario,
+    id_departamento
+)
+VALUES 
+ ('Tomás', 19, 58000, 3);
+ 
+ update empregado
+ set salario = salario * 1.05
+ where id_departamento = (select id from departamento where nome = 'TI');
+
+delete from empregado
+where idade > 40;
 
 
