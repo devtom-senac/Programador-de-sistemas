@@ -1,12 +1,9 @@
-using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
-using System.Linq;
 
 namespace Login
 {
     public partial class FormLogin : Form
     {
-
         private static readonly string ConnectionString = "datasource=localhost;username=root;password=;database=senac;";
         private readonly MySqlConnection Connection = new MySqlConnection(ConnectionString);
 
@@ -89,8 +86,6 @@ namespace Login
             textBoxUsuario.Clear();
             textBoxSenha.Clear();
         }
-
-
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
