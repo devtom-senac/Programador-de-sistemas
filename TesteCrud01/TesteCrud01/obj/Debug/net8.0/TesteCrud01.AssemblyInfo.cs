@@ -11,15 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CadastroDeClientes")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TesteCrud01")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+090a0286c601b594323c9bcdd11dc0d41a1fc133")]
-[assembly: System.Reflection.AssemblyProductAttribute("CadastroDeClientes")]
-[assembly: System.Reflection.AssemblyTitleAttribute("CadastroDeClientes")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyProductAttribute("TesteCrud01")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TesteCrud01")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

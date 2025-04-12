@@ -18,9 +18,9 @@ namespace CadastroDeClientes.dominio
         public bool Estrangeiro { get; set; }
         public Endereco Endereco { get; set; }
 
-        //public List<Cliente> ListarClientes()
-        //{
-            //return clienteRepositorio.ListarClientes();
-        //}
+        public List<Cliente> ListarClientes()
+        {
+            return clienteRepositorio.ListarClientes();
+        }
     }
 }
