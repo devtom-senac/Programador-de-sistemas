@@ -22,7 +22,7 @@ namespace ListaAtividades.Repositorio
 
                 using (var cmd = new MySqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@titulo", titulo); //ADICIONAR PARAMETRO
+                    cmd.Parameters.AddWithValue("@titulo", titulo); //ADICIONAR VALOR DO PARAMETRO
                     cmd.ExecuteNonQuery(); //EXECUTAR QUERY
 
                 }
@@ -51,7 +51,7 @@ namespace ListaAtividades.Repositorio
             {
                 con.Open();
 
-                string query = $"SELECT * FROM atividade WHERE situacao = {Situacao.Realizando};";
+                string query = $"SELECT * FROM atividade WHERE situacao = {(int)Situacao.Realizando};";
 
                 using (var cmd = new MySqlCommand(query, con))
                 {
@@ -74,14 +74,14 @@ namespace ListaAtividades.Repositorio
             return new Atividade();
         }
 
-        public List<Atividade> ListarAtividadesPendente()
+        public List<Atividade> ListarAtividadesPendentes()
         {
             List<Atividade> atividades = [];
             using (var con = DataBase.GetConnection())
             {
                 con.Open();
 
-                string query = $"SELECT * FROM atividade WHERE situacao = {Situacao.Pendente};";
+                string query = $"SELECT * FROM atividade WHERE situacao = {(int)Situacao.Pendente};";
 
                 using (var cmd = new MySqlCommand(query,con))
                 {

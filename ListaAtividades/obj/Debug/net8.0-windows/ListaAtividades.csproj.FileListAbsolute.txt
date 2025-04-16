@@ -20,7 +20,6 @@ C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\bin\Debu
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.csproj.AssemblyReference.cache
-C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.Form1.resources
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.csproj.GenerateResource.cache
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.AssemblyInfoInputs.cache
@@ -33,3 +32,4 @@ C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debu
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.pdb
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.genruntimeconfig.cache
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ref\ListaAtividades.dll
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\ListaAtividades\obj\Debug\net8.0-windows\ListaAtividades.ListaDeAtividades.resources
