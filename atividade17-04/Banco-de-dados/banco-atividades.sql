@@ -1,0 +1,43 @@
+CREATE TABLE PRODUTO(
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ data_produto DATE DEFAULT CURRENT_TIMESTAMP,
+ nome VARCHAR(100) NOT NULL
+);
+
+insert into produto (nome) values (@nome);
+
+
+ 
+CREATE TABLE ESTOQUE(
+
+id INT PRIMARY KEY AUTO_INCREMENT,
+
+quantidade VARCHAR(600) NOT NULL,
+
+id_produto INT NOT NULL,
+
+data_estoque DATE DEFAULT CURRENT_TIMESTAMP,
+
+FOREIGN KEY (id_produto) REFERENCES produto(id)
+
+);
+ 
+ 
+CREATE TABLE VENDAS(
+
+id INT PRIMARY KEY AUTO_INCREMENT,
+
+id_produto INT NOT NULL,
+
+id_estoque INT NOT NULL,
+
+data_vendas DATE DEFAULT CURRENT_TIMESTAMP,
+
+FOREIGN KEY (id_produto) REFERENCES produto(id),
+
+FOREIGN KEY(id_estoque) REFERENCES estoque(id)
+
+);
+
+ 
+

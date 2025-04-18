@@ -33,6 +33,7 @@
             dataGridViewAtividades = new DataGridView();
             buttonAtualizar = new Button();
             buttonCriar = new Button();
+            labelErro = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAtividades).BeginInit();
             SuspendLayout();
             // 
@@ -52,12 +53,19 @@
             buttonFinalizar.TabIndex = 1;
             buttonFinalizar.Text = "Finalizar";
             buttonFinalizar.UseVisualStyleBackColor = true;
+            buttonFinalizar.Click += buttonFinalizar_Click;
             // 
             // dataGridViewAtividades
             // 
+            dataGridViewAtividades.AllowUserToAddRows = false;
+            dataGridViewAtividades.AllowUserToDeleteRows = false;
+            dataGridViewAtividades.AllowUserToResizeColumns = false;
+            dataGridViewAtividades.AllowUserToResizeRows = false;
             dataGridViewAtividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewAtividades.Location = new Point(29, 77);
+            dataGridViewAtividades.MultiSelect = false;
             dataGridViewAtividades.Name = "dataGridViewAtividades";
+            dataGridViewAtividades.ReadOnly = true;
             dataGridViewAtividades.Size = new Size(317, 284);
             dataGridViewAtividades.TabIndex = 2;
             // 
@@ -69,6 +77,7 @@
             buttonAtualizar.TabIndex = 3;
             buttonAtualizar.Text = "Atualizar";
             buttonAtualizar.UseVisualStyleBackColor = true;
+            buttonAtualizar.Click += buttonAtualizar_Click;
             // 
             // buttonCriar
             // 
@@ -78,12 +87,23 @@
             buttonCriar.TabIndex = 4;
             buttonCriar.Text = "CRIAR";
             buttonCriar.UseVisualStyleBackColor = true;
+            buttonCriar.Click += buttonCriar_Click;
+            // 
+            // labelErro
+            // 
+            labelErro.AutoSize = true;
+            labelErro.Location = new Point(29, 367);
+            labelErro.Name = "labelErro";
+            labelErro.Size = new Size(38, 15);
+            labelErro.TabIndex = 5;
+            labelErro.Text = "label1";
             // 
             // ListaDeAtividades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(488, 391);
+            Controls.Add(labelErro);
             Controls.Add(buttonCriar);
             Controls.Add(buttonAtualizar);
             Controls.Add(dataGridViewAtividades);
@@ -104,5 +124,6 @@
         private DataGridView dataGridViewAtividades;
         private Button buttonAtualizar;
         private Button buttonCriar;
+        private Label labelErro;
     }
 }
