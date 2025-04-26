@@ -40,5 +40,10 @@ namespace costura
 
             this.Hide();
         }
+
+        private void pedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

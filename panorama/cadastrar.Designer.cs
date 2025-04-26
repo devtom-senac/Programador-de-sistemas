@@ -93,7 +93,7 @@
             // 
             cadastrarToolStripMenuItem.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem.Image");
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
@@ -101,7 +101,7 @@
             // 
             historicoToolStripMenuItem.Image = (Image)resources.GetObject("historicoToolStripMenuItem.Image");
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(180, 22);
+            historicoToolStripMenuItem.Size = new Size(124, 22);
             historicoToolStripMenuItem.Text = "home";
             historicoToolStripMenuItem.Click += historicoToolStripMenuItem_Click;
             // 
@@ -109,7 +109,7 @@
             // 
             toolStripMenuItem10.Image = (Image)resources.GetObject("toolStripMenuItem10.Image");
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(180, 22);
+            toolStripMenuItem10.Size = new Size(124, 22);
             toolStripMenuItem10.Text = "Imprimir";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
             // 
@@ -345,6 +345,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "cadastrar";
             Text = "cadastrar";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

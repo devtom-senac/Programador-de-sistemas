@@ -255,7 +255,7 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem7, toolStripMenuItem11 });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(800, 24);
+            menuStrip2.Size = new Size(808, 24);
             menuStrip2.TabIndex = 23;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -271,7 +271,7 @@
             // 
             cadastrarToolStripMenuItem.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem.Image");
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
@@ -279,7 +279,7 @@
             // 
             historicoToolStripMenuItem.Image = (Image)resources.GetObject("historicoToolStripMenuItem.Image");
             historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(180, 22);
+            historicoToolStripMenuItem.Size = new Size(124, 22);
             historicoToolStripMenuItem.Text = "home";
             historicoToolStripMenuItem.Click += historicoToolStripMenuItem_Click;
             // 
@@ -287,7 +287,7 @@
             // 
             toolStripMenuItem10.Image = (Image)resources.GetObject("toolStripMenuItem10.Image");
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(180, 22);
+            toolStripMenuItem10.Size = new Size(124, 22);
             toolStripMenuItem10.Text = "Pedido";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
             // 
@@ -682,8 +682,10 @@
             // 
             // pedido
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AccessibleRole = AccessibleRole.None;
+            AutoScaleMode = AutoScaleMode.None;
+            AutoScroll = true;
+            CausesValidation = false;
             ClientSize = new Size(800, 450);
             Controls.Add(lbl_pedido);
             Controls.Add(menuStrip2);
@@ -693,8 +695,11 @@
             Controls.Add(groupBox2);
             Controls.Add(pictureBox2);
             Controls.Add(btn_cadastrar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "pedido";
+            SizeGripStyle = SizeGripStyle.Show;
             Text = "pedido";
+            Load += pedido_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             menuStrip2.ResumeLayout(false);

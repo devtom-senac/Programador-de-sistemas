@@ -180,7 +180,7 @@
             btn_pedido.Name = "btn_pedido";
             btn_pedido.Size = new Size(72, 69);
             btn_pedido.TabIndex = 2;
-            btn_pedido.Text = "Pedido";
+            btn_pedido.Text = "Pedidos";
             btn_pedido.TextAlign = ContentAlignment.BottomCenter;
             btn_pedido.UseVisualStyleBackColor = true;
             btn_pedido.Click += btn_pedido_Click;
@@ -219,7 +219,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(812, 404);
+            pictureBox1.Size = new Size(812, 423);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -277,14 +277,14 @@
             // 
             loginToolStripMenuItem.Image = (Image)resources.GetObject("loginToolStripMenuItem.Image");
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(124, 22);
+            loginToolStripMenuItem.Size = new Size(180, 22);
             loginToolStripMenuItem.Text = "Login";
             // 
             // cadastrarToolStripMenuItem1
             // 
             cadastrarToolStripMenuItem1.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem1.Image");
             cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            cadastrarToolStripMenuItem1.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem1.Size = new Size(180, 22);
             cadastrarToolStripMenuItem1.Text = "Cadastrar";
             // 
             // lbl_home
@@ -323,6 +323,7 @@
             Controls.Add(groupBox2);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "home";
             Text = " ";
             groupBox2.ResumeLayout(false);
