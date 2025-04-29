@@ -50,21 +50,73 @@ namespace costura
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.Nome = txt_nome.Text;
-            cliente.Telefone = txt_telefone.Text;
+
+            // Validações de campos obrigatórios
+            if (string.IsNullOrWhiteSpace(txt_nome.Text))
+            {
+                MessageBox.Show("Por favor, preencha o nome.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_telefone.Text))
+            {
+                MessageBox.Show("Por favor, preencha o telefone.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_preco.Text))
+            {
+                MessageBox.Show("Por favor, preencha o preço.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_entrega.Text))
+            {
+                MessageBox.Show("Por favor, informe a data de entrega.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_pagamento.Text))
+            {
+                MessageBox.Show("Por favor, informe a forma de pagamento.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_status.Text))
+            {
+                MessageBox.Show("Por favor, informe o status do pedido.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Aqui segue a lógica para cadastrar:
+            Cliente cliente = new Cliente
+            {
+                Nome = txt_nome.Text,
+                Telefone = txt_telefone.Text
+            };
 
             string resultado = ClienteRepositorio.CadastrarCliente(cliente);
 
             if (resultado == "")
             {
                 MessageBox.Show("Cliente cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label_erro.Text = "";
+                LimparCampos();
             }
             else
             {
-                label_erro.Text = resultado;
+                MessageBox.Show(resultado, "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void LimparCampos()
+        {
+            txt_nome.Text = "";
+            txt_telefone.Text = "";
+            txt_preco.Text = "";
+            txt_entrega.Text = "";
+            txt_pagamento.Text = "";
+            txt_status.Text = "";
         }
     }
 }
