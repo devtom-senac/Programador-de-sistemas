@@ -1,4 +1,6 @@
-﻿using System;
+﻿using panorama.dominio;
+using panorama.repositorio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +46,25 @@ namespace costura
             home.Show();
 
             this.Hide();
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Nome = txt_nome.Text;
+            cliente.Telefone = txt_telefone.Text;
+
+            string resultado = ClienteRepositorio.CadastrarCliente(cliente);
+
+            if (resultado == "")
+            {
+                MessageBox.Show("Cliente cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label_erro.Text = "";
+            }
+            else
+            {
+                label_erro.Text = resultado;
+            }
         }
     }
 }

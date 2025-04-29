@@ -1614,11 +1614,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\ListaAtividades\\ListaAtividades.csproj",
+      "projectUniqueName": "C:\\Users\\heverton.nsouza\\source\\repos\\Programador-de-sistemas\\ListaAtividades\\ListaAtividades.csproj",
       "projectName": "ListaAtividades",
-      "projectPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\ListaAtividades\\ListaAtividades.csproj",
+      "projectPath": "C:\\Users\\heverton.nsouza\\source\\repos\\Programador-de-sistemas\\ListaAtividades\\ListaAtividades.csproj",
       "packagesPath": "C:\\Users\\heverton.nsouza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\ListaAtividades\\obj\\",
+      "outputPath": "C:\\Users\\heverton.nsouza\\source\\repos\\Programador-de-sistemas\\ListaAtividades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
