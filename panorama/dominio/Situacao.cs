@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace panorama.repositorio
+namespace panorama.dominio
 {
-    internal class CadastroRepositorio
+    internal enum Situacao
     {
+        Pendente,
+        Realizando,
+        Concluido
     }
 }

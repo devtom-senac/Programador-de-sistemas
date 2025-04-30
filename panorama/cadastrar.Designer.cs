@@ -54,7 +54,6 @@
             txt_status = new TextBox();
             txt_telefone = new TextBox();
             btn_cadastrar = new Button();
-            label_erro = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -70,6 +69,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // menuStrip2
             // 
@@ -178,29 +178,29 @@
             groupBox2.Controls.Add(txt_pagamento);
             groupBox2.Controls.Add(txt_status);
             groupBox2.Controls.Add(txt_telefone);
-            groupBox2.Location = new Point(271, 69);
+            groupBox2.Location = new Point(243, 69);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(222, 316);
+            groupBox2.Size = new Size(250, 232);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
             // txt_nome
             // 
-            txt_nome.Location = new Point(64, 34);
+            txt_nome.Location = new Point(24, 34);
             txt_nome.Name = "txt_nome";
-            txt_nome.Size = new Size(100, 23);
+            txt_nome.Size = new Size(207, 23);
             txt_nome.TabIndex = 20;
             // 
             // txt_preco
             // 
-            txt_preco.Location = new Point(67, 134);
+            txt_preco.Location = new Point(24, 134);
             txt_preco.Name = "txt_preco";
             txt_preco.Size = new Size(100, 23);
             txt_preco.TabIndex = 19;
             // 
             // txt_entrega
             // 
-            txt_entrega.Location = new Point(61, 184);
+            txt_entrega.Location = new Point(131, 84);
             txt_entrega.Name = "txt_entrega";
             txt_entrega.Size = new Size(100, 23);
             txt_entrega.TabIndex = 18;
@@ -213,12 +213,12 @@
             lbl_nome.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_nome.ForeColor = SystemColors.ControlLightLight;
             lbl_nome.Image = (Image)resources.GetObject("lbl_nome.Image");
-            lbl_nome.Location = new Point(87, 10);
+            lbl_nome.Location = new Point(73, 10);
             lbl_nome.Name = "lbl_nome";
             lbl_nome.RightToLeft = RightToLeft.No;
-            lbl_nome.Size = new Size(53, 21);
+            lbl_nome.Size = new Size(124, 21);
             lbl_nome.TabIndex = 16;
-            lbl_nome.Text = "Nome";
+            lbl_nome.Text = "Nome do cliente";
             lbl_nome.UseMnemonic = false;
             // 
             // label15
@@ -229,7 +229,7 @@
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = SystemColors.ControlLightLight;
             label15.Image = (Image)resources.GetObject("label15.Image");
-            label15.Location = new Point(91, 110);
+            label15.Location = new Point(38, 110);
             label15.Name = "label15";
             label15.RightToLeft = RightToLeft.No;
             label15.Size = new Size(49, 21);
@@ -245,7 +245,7 @@
             lbl_entrega.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_entrega.ForeColor = SystemColors.ControlLightLight;
             lbl_entrega.Image = (Image)resources.GetObject("lbl_entrega.Image");
-            lbl_entrega.Location = new Point(85, 160);
+            lbl_entrega.Location = new Point(152, 60);
             lbl_entrega.Name = "lbl_entrega";
             lbl_entrega.RightToLeft = RightToLeft.No;
             lbl_entrega.Size = new Size(63, 21);
@@ -261,7 +261,7 @@
             lbl_pagamento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_pagamento.ForeColor = SystemColors.ControlLightLight;
             lbl_pagamento.Image = (Image)resources.GetObject("lbl_pagamento.Image");
-            lbl_pagamento.Location = new Point(62, 264);
+            lbl_pagamento.Location = new Point(142, 110);
             lbl_pagamento.Name = "lbl_pagamento";
             lbl_pagamento.RightToLeft = RightToLeft.No;
             lbl_pagamento.Size = new Size(89, 21);
@@ -277,7 +277,7 @@
             lbl_status.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_status.ForeColor = SystemColors.ControlLightLight;
             lbl_status.Image = (Image)resources.GetObject("lbl_status.Image");
-            lbl_status.Location = new Point(80, 212);
+            lbl_status.Location = new Point(102, 171);
             lbl_status.Name = "lbl_status";
             lbl_status.RightToLeft = RightToLeft.No;
             lbl_status.Size = new Size(51, 21);
@@ -293,7 +293,7 @@
             lbl_telefone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_telefone.ForeColor = SystemColors.ControlLightLight;
             lbl_telefone.Image = (Image)resources.GetObject("lbl_telefone.Image");
-            lbl_telefone.Location = new Point(85, 60);
+            lbl_telefone.Location = new Point(38, 60);
             lbl_telefone.Name = "lbl_telefone";
             lbl_telefone.RightToLeft = RightToLeft.No;
             lbl_telefone.Size = new Size(66, 21);
@@ -303,23 +303,23 @@
             // 
             // txt_pagamento
             // 
-            txt_pagamento.Location = new Point(62, 288);
+            txt_pagamento.Location = new Point(131, 134);
             txt_pagamento.Name = "txt_pagamento";
             txt_pagamento.Size = new Size(100, 23);
             txt_pagamento.TabIndex = 2;
             // 
             // txt_status
             // 
-            txt_status.Location = new Point(62, 236);
+            txt_status.Location = new Point(79, 195);
             txt_status.Name = "txt_status";
             txt_status.Size = new Size(100, 23);
             txt_status.TabIndex = 1;
             // 
             // txt_telefone
             // 
-            txt_telefone.Location = new Point(63, 84);
+            txt_telefone.Location = new Point(24, 84);
             txt_telefone.Name = "txt_telefone";
-            txt_telefone.Size = new Size(100, 23);
+            txt_telefone.Size = new Size(101, 23);
             txt_telefone.TabIndex = 0;
             // 
             // btn_cadastrar
@@ -327,29 +327,19 @@
             btn_cadastrar.BackColor = Color.Transparent;
             btn_cadastrar.BackgroundImage = (Image)resources.GetObject("btn_cadastrar.BackgroundImage");
             btn_cadastrar.FlatStyle = FlatStyle.Flat;
-            btn_cadastrar.Location = new Point(347, 405);
+            btn_cadastrar.Location = new Point(303, 317);
             btn_cadastrar.Name = "btn_cadastrar";
-            btn_cadastrar.Size = new Size(75, 23);
+            btn_cadastrar.Size = new Size(119, 38);
             btn_cadastrar.TabIndex = 21;
             btn_cadastrar.Text = "cadastrar";
             btn_cadastrar.UseVisualStyleBackColor = false;
             btn_cadastrar.Click += btn_cadastrar_Click;
-            // 
-            // label_erro
-            // 
-            label_erro.AutoSize = true;
-            label_erro.Location = new Point(513, 413);
-            label_erro.Name = "label_erro";
-            label_erro.Size = new Size(46, 15);
-            label_erro.TabIndex = 22;
-            label_erro.Text = "retorno";
             // 
             // cadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label_erro);
             Controls.Add(btn_cadastrar);
             Controls.Add(groupBox2);
             Controls.Add(lbl_cadastrar);
@@ -397,6 +387,5 @@
         private Label lbl_nome;
         private Label label15;
         private Button btn_cadastrar;
-        private Label label_erro;
     }
 }
