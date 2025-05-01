@@ -9,18 +9,16 @@ namespace costura
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            {
-                pedido pedido = new pedido();
-                pedido.Show();
+            cadastrar cadastrar = new cadastrar();
+            cadastrar.Show();
 
-                this.Hide();
-            }
+            this.Hide();
         }
 
         private void btn_pedido_Click(object sender, EventArgs e)
-        {
-            cadastrar cadastrar = new cadastrar();
-            cadastrar.Show();
+        {         
+            pedido pedido = new pedido();
+            pedido.Show();
 
             this.Hide();
         }

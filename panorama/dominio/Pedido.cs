@@ -10,7 +10,7 @@ namespace panorama.dominio
         public decimal Preco { get; set; }
         public string Pagamento { get; set; }
         public DateTime DataEntrega { get; set; }
-        public Situacao Status { get; set; }
+        public string Situacao { get; set; }
 
         public string ValidarNomeCliente()
         {
@@ -85,6 +85,19 @@ namespace panorama.dominio
 
             return string.Empty;
         }
+
+        public string ValidarSituacao()
+        {
+            if (string.IsNullOrWhiteSpace(Situacao))
+            {
+                return "A situação não pode ser vazia.";
+            }
+
+            return string.Empty;
+        }
+
+
+
         public void Criar()
         {
             //PedidoRepositorio pedidoRepositorio = new PedidoRepositorio();

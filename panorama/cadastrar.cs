@@ -50,63 +50,34 @@ namespace costura
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
+            decimal preco; 
+            if (decimal.TryParse(txt_preco.Text, out preco))
+            {
+                // Convertemos o texto do txt_preco em decimal para pegarmos valor dele
+                Pedido pedido = new Pedido
+                {
+                    NomeCliente = txt_nome.Text,
+                    Telefone = txt_telefone.Text,
+                    Preco = preco, // agora é decimal
+                    DataEntrega = DateTime.TryParse(txt_entrega.Text, out DateTime dataEntrega) ? dataEntrega : DateTime.MinValue, // aqui esta sendo usado ternario ? para realizar ou um metodo ou outro metodo
+                    Situacao = txt_situacao.Text,
+                    Pagamento = txt_pagamento.Text
+                };
 
-            //// Validações de campos obrigatórios
-            //if (string.IsNullOrWhiteSpace(txt_nome.Text))
-            //{
-            //    MessageBox.Show("Por favor, preencha o nome.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+                string erroNome = pedido.ValidarNomeCliente();
+                if (!string.IsNullOrEmpty(erroNome))
+                {
+                    MessageBox.Show(erroNome, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Interrompe o fluxo caso haja erro no nome
+                }
 
-            //if (string.IsNullOrWhiteSpace(txt_telefone.Text))
-            //{
-            //    MessageBox.Show("Por favor, preencha o telefone.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
 
-            //if (string.IsNullOrWhiteSpace(txt_preco.Text))
-            //{
-            //    MessageBox.Show("Por favor, preencha o preço.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+                pedido.Criar();
 
-            //if (string.IsNullOrWhiteSpace(txt_entrega.Text))
-            //{
-            //    MessageBox.Show("Por favor, informe a data de entrega.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+                // Exibe uma mensagem de sucesso
+                MessageBox.Show("Pedido cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //if (string.IsNullOrWhiteSpace(txt_pagamento.Text))
-            //{
-            //    MessageBox.Show("Por favor, informe a forma de pagamento.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            //if (string.IsNullOrWhiteSpace(txt_status.Text))
-            //{
-            //    MessageBox.Show("Por favor, informe o status do pedido.", "Campo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            //// Aqui segue a lógica para cadastrar:
-            //Cliente cliente = new Cliente
-            //{
-            //    Nome = txt_nome.Text,
-            //    Telefone = txt_telefone.Text
-            //};
-
-            //string resultado = ClienteRepositorio.CadastrarCliente(cliente);
-
-            //if (resultado == "")
-            //{
-            //    MessageBox.Show("Cliente cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    LimparCampos();
-            //}
-            //else
-            //{
-            //    MessageBox.Show(resultado, "Erro ao cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
+            }
         }
 
         private void LimparCampos()
@@ -116,7 +87,7 @@ namespace costura
             txt_preco.Text = "";
             txt_entrega.Text = "";
             txt_pagamento.Text = "";
-            txt_status.Text = "";
+            txt_situacao.Text = "";
         }
     }
 }

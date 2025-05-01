@@ -24,7 +24,7 @@ namespace panorama.repositorio
             comando.Parameters.AddWithValue("@dataEntrega", novoPedido.DataEntrega);
             comando.Parameters.AddWithValue("@preco", novoPedido.Preco);
             comando.Parameters.AddWithValue("@pagamento", novoPedido.Pagamento);
-            comando.Parameters.AddWithValue("@situacao", novoPedido.Status.ToString());
+            comando.Parameters.AddWithValue("@situacao", novoPedido.Situacao);
 
             comando.ExecuteNonQuery();
         }
