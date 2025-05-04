@@ -48,36 +48,108 @@ namespace costura
             this.Hide();
         }
 
+        private void cadastrar_Load(object sender, EventArgs e)
+        {
+            txt_nome.Focus();
+
+            // Deixa todos os campos em maiúsculo
+            txt_nome.CharacterCasing = CharacterCasing.Upper;
+            txt_telefone.CharacterCasing = CharacterCasing.Upper;
+            txt_pagamento.CharacterCasing = CharacterCasing.Upper;
+            txt_situacao.CharacterCasing = CharacterCasing.Upper;
+        }
+
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            decimal preco; 
-            if (decimal.TryParse(txt_preco.Text, out preco))
+            Pedido pedido = new Pedido
             {
-                // Convertemos o texto do txt_preco em decimal para pegarmos valor dele
-                Pedido pedido = new Pedido
-                {
-                    NomeCliente = txt_nome.Text,
-                    Telefone = txt_telefone.Text,
-                    Preco = preco, // agora é decimal
-                    DataEntrega = DateTime.TryParse(txt_entrega.Text, out DateTime dataEntrega) ? dataEntrega : DateTime.MinValue, // aqui esta sendo usado ternario ? para realizar ou um metodo ou outro metodo
-                    Situacao = txt_situacao.Text,
-                    Pagamento = txt_pagamento.Text
-                };
+                NomeCliente = txt_nome.Text,
+                Telefone = txt_telefone.Text,
+                Pagamento = txt_pagamento.Text,
+                Situacao = txt_situacao.Text
+            };
 
-                string erroNome = pedido.ValidarNomeCliente();
-                if (!string.IsNullOrEmpty(erroNome))
-                {
-                    MessageBox.Show(erroNome, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Interrompe o fluxo caso haja erro no nome
-                }
+            string erro;
 
-
-                pedido.Criar();
-
-                // Exibe uma mensagem de sucesso
-                MessageBox.Show("Pedido cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            // Validação Nome
+            erro = pedido.ValidarNomeCliente();
+            if (!string.IsNullOrWhiteSpace(erro))
+            {
+                label_erro.Text = erro;
+                txt_nome.Focus();
+                return;
             }
+
+            // Validação Telefone
+            erro = pedido.ValidarTelefone();
+            if (!string.IsNullOrEmpty(erro))
+            {
+                label_erro.Text = erro;
+                txt_telefone.Focus();
+                return;
+            }
+
+            // Preço - só tenta converter aqui
+            if (decimal.TryParse(txt_preco.Text, out decimal preco))
+            {
+                pedido.Preco = preco;
+                erro = pedido.ValidarPreco();
+                if (!string.IsNullOrEmpty(erro))
+                {
+                    label_erro.Text = erro;
+                    txt_preco.Focus();
+                    return;
+                }
+            }
+            else
+            {
+                label_erro.Text = "Preço inválido.";
+                txt_preco.Focus();
+                return;
+            }
+
+            // DataEntrega - só tenta converter aqui
+            if (DateTime.TryParse(txt_entrega.Text, out DateTime data))
+            {
+                pedido.DataEntrega = data;
+                erro = pedido.ValidarDataEntrega();
+                if (!string.IsNullOrEmpty(erro))
+                {
+                    label_erro.Text = erro;
+                    txt_entrega.Focus();
+                    return;
+                }
+            }
+            else
+            {
+                label_erro.Text = "Data de entrega inválida.";
+                txt_entrega.Focus();
+                return;
+            }
+
+            // Validação Pagamento
+            erro = pedido.ValidarPagamento();
+            if (!string.IsNullOrEmpty(erro))
+            {
+                label_erro.Text = erro;
+                txt_pagamento.Focus();
+                return;
+            }
+
+            // Validação Situação
+            erro = pedido.ValidarSituacao();
+            if (!string.IsNullOrEmpty(erro))
+            {
+                label_erro.Text = erro;
+                txt_situacao.Focus();
+                return;
+            }
+
+            // Tudo certo
+            label_erro.Text = "";
+            pedido.Criar();
+            MessageBox.Show("Pedido cadastrado com sucesso!");
+            LimparCampos();
         }
 
         private void LimparCampos()
@@ -89,5 +161,7 @@ namespace costura
             txt_pagamento.Text = "";
             txt_situacao.Text = "";
         }
+
+        
     }
 }

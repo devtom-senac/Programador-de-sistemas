@@ -14,27 +14,51 @@ namespace panorama.dominio
 
         public string ValidarNomeCliente()
         {
+            // Verifica se está vazio ou só com espaços
             if (string.IsNullOrWhiteSpace(NomeCliente))
             {
                 return "O nome não pode ser vazio.";
             }
 
-            if (!NomeCliente.Contains(' '))
+            // Remove espaços do começo e do fim
+            string nomeLimpo = NomeCliente.Trim();
+
+            // Conta quantas palavras tem (nome + sobrenome)
+            int espacos = 0;
+            for (int i = 0; i < nomeLimpo.Length; i++)
+            {
+                if (nomeLimpo[i] == ' ')
+                {
+                    espacos++;
+                }
+            }
+
+            // Se não tiver pelo menos um espaço no meio, não tem sobrenome
+            if (espacos < 1)
             {
                 return "O nome deve ter pelo menos um sobrenome.";
             }
 
-            if (NomeCliente.Any(char.IsNumber))
+            // Verifica se tem número
+            foreach (char c in nomeLimpo)
             {
-                return "O nome não pode ter números.";
+                if (char.IsDigit(c))
+                {
+                    return "O nome não pode ter números.";
+                }
             }
 
-            if (NomeCliente.Any(char.IsSymbol))
+            // Verifica se tem símbolo ou caractere especial
+            foreach (char c in nomeLimpo)
             {
-                return "O nome não pode ter caracteres especiais.";
+                if (!char.IsLetter(c) && c != ' ')
+                {
+                    return "O nome não pode ter caracteres especiais.";
+                }
             }
 
-            return string.Empty;
+            // Se passou por tudo, está válido
+            return "";
         }
 
         public string ValidarTelefone()
@@ -44,17 +68,17 @@ namespace panorama.dominio
                 return string.Empty;
             }
 
-            if (Telefone.Length != 11)
-            {
-                return "O telefone deve ter 11 digitos.";
-            }
-
             if (!Telefone.All(char.IsNumber))
             {
                 return "O telefone só deve ter numeros.";
             }
 
             return string.Empty;
+
+            if (Telefone.Length != 11)
+            {
+                return "O telefone deve ter 11 digitos.";
+            }          
         }
 
         public string ValidarPreco()
@@ -66,23 +90,22 @@ namespace panorama.dominio
             return string.Empty;
         }
 
-        public string ValidarPagamento()
-        {
-            if (string.IsNullOrWhiteSpace(Pagamento))
-            {
-                return "O pagamento não pode ser vazio.";
-            }
-            return string.Empty;
-        }
-
         public string ValidarDataEntrega()
         {
             if (DataEntrega < DateTime.Now)
             {
                 return "A data deve ser uma data futura.";
             }
+            return string.Empty;
+        }
 
 
+        public string ValidarPagamento()
+        {
+            if (string.IsNullOrWhiteSpace(Pagamento))
+            {
+                return "O pagamento não pode ser vazio.";
+            }
             return string.Empty;
         }
 
