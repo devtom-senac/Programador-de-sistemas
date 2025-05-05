@@ -16,7 +16,7 @@ namespace costura
         }
 
         private void btn_pedido_Click(object sender, EventArgs e)
-        {         
+        {
             pedido pedido = new pedido();
             pedido.Show();
 
@@ -25,8 +25,8 @@ namespace costura
 
         private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pedido pedido = new pedido();
-            pedido.Show();
+            cadastrar cadastrar = new cadastrar();
+            cadastrar.Show();
 
             this.Hide();
         }
@@ -37,6 +37,17 @@ namespace costura
             pedido.Show();
 
             this.Hide();
+        }
+
+        private void historicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
         }
     }
 }

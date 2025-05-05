@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using panorama;
+﻿using panorama;
 using panorama.dominio;
 using panorama.repositorio;
 
@@ -78,6 +69,22 @@ namespace costura
                 // Adiciona o card no painel de pedidos
                 flow_pedidos.Controls.Add(card);
             }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            home home = new home();
+            home.Show();
+
+            this.Hide();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            cadastrar cadastrar = new cadastrar();
+            cadastrar.Show();
+
+            this.Hide();
         }
     }
 }

@@ -150,6 +150,8 @@ namespace costura
             pedido.Criar();
             MessageBox.Show("Pedido cadastrado com sucesso!");
             LimparCampos();
+
+
         }
 
         private void LimparCampos()
@@ -162,6 +164,33 @@ namespace costura
             txt_situacao.Text = "";
         }
 
-        
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            home home = new home();
+            home.Show();
+
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            home home = new home();
+            home.Show();
+
+            this.Hide();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            pedido pedido = new pedido();
+            pedido.Show();
+
+            this.Hide();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

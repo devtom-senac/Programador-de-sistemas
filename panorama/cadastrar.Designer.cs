@@ -31,10 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadastrar));
             pictureBox1 = new PictureBox();
             menuStrip2 = new MenuStrip();
-            toolStripMenuItem7 = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            historicoToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem10 = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripMenuItem();
             toolStripMenuItem11 = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
@@ -55,6 +54,7 @@
             txt_situacao = new TextBox();
             btn_cadastrar = new Button();
             label_erro = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -64,87 +64,76 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(2, 41);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(0, -45);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(912, 565);
+            pictureBox1.Size = new Size(808, 503);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // menuStrip2
             // 
-            menuStrip2.BackColor = Color.FromArgb(128, 64, 0);
+            menuStrip2.BackColor = Color.CadetBlue;
             menuStrip2.ImageScalingSize = new Size(20, 20);
-            menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem7, toolStripMenuItem11 });
+            menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem11 });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Padding = new Padding(7, 3, 0, 3);
-            menuStrip2.Size = new Size(914, 30);
+            menuStrip2.Size = new Size(800, 28);
             menuStrip2.TabIndex = 3;
             menuStrip2.Text = "menuStrip2";
             // 
-            // toolStripMenuItem7
+            // toolStripMenuItem1
             // 
-            toolStripMenuItem7.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, historicoToolStripMenuItem, toolStripMenuItem10 });
-            toolStripMenuItem7.Image = (Image)resources.GetObject("toolStripMenuItem7.Image");
-            toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(47, 24);
-            toolStripMenuItem7.Text = " ";
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem3, toolStripMenuItem4 });
+            toolStripMenuItem1.Image = (Image)resources.GetObject("toolStripMenuItem1.Image");
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(42, 24);
+            toolStripMenuItem1.Text = " ";
             // 
-            // cadastrarToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            cadastrarToolStripMenuItem.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem.Image");
-            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(155, 26);
-            cadastrarToolStripMenuItem.Text = "Cadastrar";
-            cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
+            toolStripMenuItem3.Image = (Image)resources.GetObject("toolStripMenuItem3.Image");
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(184, 26);
+            toolStripMenuItem3.Text = "home";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
-            // historicoToolStripMenuItem
+            // toolStripMenuItem4
             // 
-            historicoToolStripMenuItem.Image = (Image)resources.GetObject("historicoToolStripMenuItem.Image");
-            historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            historicoToolStripMenuItem.Size = new Size(224, 26);
-            historicoToolStripMenuItem.Text = "home";
-            historicoToolStripMenuItem.Click += historicoToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem10
-            // 
-            toolStripMenuItem10.Image = (Image)resources.GetObject("toolStripMenuItem10.Image");
-            toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(155, 26);
-            toolStripMenuItem10.Text = "Imprimir";
-            toolStripMenuItem10.Click += toolStripMenuItem10_Click;
+            toolStripMenuItem4.Image = (Image)resources.GetObject("toolStripMenuItem4.Image");
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(184, 26);
+            toolStripMenuItem4.Text = "Pedido";
+            toolStripMenuItem4.Click += toolStripMenuItem4_Click;
             // 
             // toolStripMenuItem11
             // 
             toolStripMenuItem11.DropDownItems.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastrarToolStripMenuItem1 });
             toolStripMenuItem11.Image = (Image)resources.GetObject("toolStripMenuItem11.Image");
             toolStripMenuItem11.Name = "toolStripMenuItem11";
-            toolStripMenuItem11.Size = new Size(47, 24);
+            toolStripMenuItem11.Size = new Size(42, 24);
             toolStripMenuItem11.Text = " ";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Image = (Image)resources.GetObject("loginToolStripMenuItem.Image");
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(155, 26);
+            loginToolStripMenuItem.Size = new Size(124, 22);
             loginToolStripMenuItem.Text = "Login";
             // 
             // cadastrarToolStripMenuItem1
             // 
             cadastrarToolStripMenuItem1.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem1.Image");
             cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            cadastrarToolStripMenuItem1.Size = new Size(155, 26);
+            cadastrarToolStripMenuItem1.Size = new Size(124, 22);
             cadastrarToolStripMenuItem1.Text = "Cadastrar";
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(128, 64, 0);
+            pictureBox2.BackColor = Color.CadetBlue;
             pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(923, 62);
+            pictureBox2.Size = new Size(808, 46);
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -153,20 +142,20 @@
             // 
             lbl_cadastrar.AccessibleRole = AccessibleRole.None;
             lbl_cadastrar.AutoSize = true;
-            lbl_cadastrar.BackColor = Color.FromArgb(128, 64, 0);
+            lbl_cadastrar.BackColor = Color.CadetBlue;
             lbl_cadastrar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_cadastrar.ForeColor = Color.White;
-            lbl_cadastrar.Location = new Point(315, 19);
+            lbl_cadastrar.ForeColor = Color.Black;
+            lbl_cadastrar.Location = new Point(276, 14);
             lbl_cadastrar.Name = "lbl_cadastrar";
             lbl_cadastrar.RightToLeft = RightToLeft.No;
-            lbl_cadastrar.Size = new Size(260, 31);
+            lbl_cadastrar.Size = new Size(216, 25);
             lbl_cadastrar.TabIndex = 5;
             lbl_cadastrar.Text = "CADASTRO DE PEDIDO";
             lbl_cadastrar.UseMnemonic = false;
             // 
             // groupBox2
             // 
-            groupBox2.BackColor = Color.FromArgb(128, 64, 0);
+            groupBox2.BackColor = Color.FromArgb(64, 64, 64);
             groupBox2.BackgroundImageLayout = ImageLayout.None;
             groupBox2.Controls.Add(txt_telefone);
             groupBox2.Controls.Add(txt_nome);
@@ -180,43 +169,39 @@
             groupBox2.Controls.Add(lbl_telefone);
             groupBox2.Controls.Add(txt_pagamento);
             groupBox2.Controls.Add(txt_situacao);
-            groupBox2.Location = new Point(273, 140);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(239, 105);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(319, 301);
+            groupBox2.Size = new Size(279, 226);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
             // txt_telefone
             // 
-            txt_telefone.Location = new Point(21, 113);
+            txt_telefone.Location = new Point(18, 85);
+            txt_telefone.Margin = new Padding(3, 2, 3, 2);
             txt_telefone.Name = "txt_telefone";
-            txt_telefone.Size = new Size(125, 27);
+            txt_telefone.Size = new Size(110, 23);
             txt_telefone.TabIndex = 21;
             // 
             // txt_nome
             // 
-            txt_nome.Location = new Point(21, 49);
-            txt_nome.Margin = new Padding(3, 4, 3, 4);
+            txt_nome.Location = new Point(18, 37);
             txt_nome.Name = "txt_nome";
-            txt_nome.Size = new Size(281, 27);
+            txt_nome.Size = new Size(246, 23);
             txt_nome.TabIndex = 20;
             // 
             // txt_preco
             // 
-            txt_preco.Location = new Point(171, 114);
-            txt_preco.Margin = new Padding(3, 4, 3, 4);
+            txt_preco.Location = new Point(150, 86);
             txt_preco.Name = "txt_preco";
-            txt_preco.Size = new Size(127, 27);
+            txt_preco.Size = new Size(112, 23);
             txt_preco.TabIndex = 19;
             // 
             // txt_entrega
             // 
-            txt_entrega.Location = new Point(19, 185);
-            txt_entrega.Margin = new Padding(3, 4, 3, 4);
+            txt_entrega.Location = new Point(17, 139);
             txt_entrega.Name = "txt_entrega";
-            txt_entrega.Size = new Size(127, 27);
+            txt_entrega.Size = new Size(112, 23);
             txt_entrega.TabIndex = 18;
             // 
             // lbl_nome
@@ -226,10 +211,10 @@
             lbl_nome.BackColor = Color.Transparent;
             lbl_nome.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_nome.ForeColor = Color.White;
-            lbl_nome.Location = new Point(121, 20);
+            lbl_nome.Location = new Point(106, 15);
             lbl_nome.Name = "lbl_nome";
             lbl_nome.RightToLeft = RightToLeft.No;
-            lbl_nome.Size = new Size(83, 25);
+            lbl_nome.Size = new Size(68, 20);
             lbl_nome.TabIndex = 16;
             lbl_nome.Text = "CLIENTE";
             lbl_nome.UseMnemonic = false;
@@ -241,10 +226,10 @@
             label15.BackColor = Color.Transparent;
             label15.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label15.ForeColor = SystemColors.ControlLightLight;
-            label15.Location = new Point(200, 85);
+            label15.Location = new Point(175, 64);
             label15.Name = "label15";
             label15.RightToLeft = RightToLeft.No;
-            label15.Size = new Size(73, 25);
+            label15.Size = new Size(58, 20);
             label15.TabIndex = 15;
             label15.Text = "VALOR";
             label15.UseMnemonic = false;
@@ -256,10 +241,10 @@
             lbl_entrega.BackColor = Color.Transparent;
             lbl_entrega.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbl_entrega.ForeColor = SystemColors.ControlLightLight;
-            lbl_entrega.Location = new Point(32, 156);
+            lbl_entrega.Location = new Point(28, 117);
             lbl_entrega.Name = "lbl_entrega";
             lbl_entrega.RightToLeft = RightToLeft.No;
-            lbl_entrega.Size = new Size(97, 25);
+            lbl_entrega.Size = new Size(78, 20);
             lbl_entrega.TabIndex = 17;
             lbl_entrega.Text = "ENTREGA";
             lbl_entrega.UseMnemonic = false;
@@ -271,10 +256,10 @@
             lbl_pagamento.BackColor = Color.Transparent;
             lbl_pagamento.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbl_pagamento.ForeColor = SystemColors.ControlLightLight;
-            lbl_pagamento.Location = new Point(172, 156);
+            lbl_pagamento.Location = new Point(150, 117);
             lbl_pagamento.Name = "lbl_pagamento";
             lbl_pagamento.RightToLeft = RightToLeft.No;
-            lbl_pagamento.Size = new Size(130, 25);
+            lbl_pagamento.Size = new Size(103, 20);
             lbl_pagamento.TabIndex = 10;
             lbl_pagamento.Text = "PAGAMENTO";
             lbl_pagamento.UseMnemonic = false;
@@ -286,10 +271,10 @@
             lbl_status.BackColor = Color.Transparent;
             lbl_status.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_status.ForeColor = SystemColors.ControlLightLight;
-            lbl_status.Location = new Point(113, 231);
+            lbl_status.Location = new Point(99, 173);
             lbl_status.Name = "lbl_status";
             lbl_status.RightToLeft = RightToLeft.No;
-            lbl_status.Size = new Size(103, 25);
+            lbl_status.Size = new Size(84, 20);
             lbl_status.TabIndex = 9;
             lbl_status.Text = "SITUAÇÃO";
             lbl_status.UseMnemonic = false;
@@ -301,10 +286,10 @@
             lbl_telefone.BackColor = Color.Transparent;
             lbl_telefone.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbl_telefone.ForeColor = SystemColors.ControlLightLight;
-            lbl_telefone.Location = new Point(32, 82);
+            lbl_telefone.Location = new Point(28, 62);
             lbl_telefone.Name = "lbl_telefone";
             lbl_telefone.RightToLeft = RightToLeft.No;
-            lbl_telefone.Size = new Size(107, 25);
+            lbl_telefone.Size = new Size(85, 20);
             lbl_telefone.TabIndex = 8;
             lbl_telefone.Text = "TELEFONE ";
             lbl_telefone.UseMnemonic = false;
@@ -312,31 +297,28 @@
             // txt_pagamento
             // 
             txt_pagamento.BackColor = SystemColors.HighlightText;
-            txt_pagamento.Location = new Point(171, 185);
-            txt_pagamento.Margin = new Padding(3, 4, 3, 4);
+            txt_pagamento.Location = new Point(150, 139);
             txt_pagamento.Name = "txt_pagamento";
-            txt_pagamento.Size = new Size(127, 27);
+            txt_pagamento.Size = new Size(112, 23);
             txt_pagamento.TabIndex = 2;
             // 
             // txt_situacao
             // 
             txt_situacao.BackColor = SystemColors.ButtonHighlight;
-            txt_situacao.Location = new Point(19, 260);
-            txt_situacao.Margin = new Padding(3, 4, 3, 4);
+            txt_situacao.Location = new Point(17, 195);
             txt_situacao.Name = "txt_situacao";
-            txt_situacao.Size = new Size(281, 27);
+            txt_situacao.Size = new Size(246, 23);
             txt_situacao.TabIndex = 1;
             // 
             // btn_cadastrar
             // 
-            btn_cadastrar.BackColor = Color.FromArgb(128, 64, 0);
+            btn_cadastrar.BackColor = Color.FromArgb(64, 64, 64);
             btn_cadastrar.FlatStyle = FlatStyle.Flat;
             btn_cadastrar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_cadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btn_cadastrar.Location = new Point(334, 472);
-            btn_cadastrar.Margin = new Padding(3, 4, 3, 4);
+            btn_cadastrar.Location = new Point(239, 356);
             btn_cadastrar.Name = "btn_cadastrar";
-            btn_cadastrar.Size = new Size(187, 43);
+            btn_cadastrar.Size = new Size(129, 32);
             btn_cadastrar.TabIndex = 21;
             btn_cadastrar.Text = "Cadastrar";
             btn_cadastrar.UseVisualStyleBackColor = false;
@@ -345,19 +327,34 @@
             // label_erro
             // 
             label_erro.AutoSize = true;
-            label_erro.BackColor = Color.Transparent;
-            label_erro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label_erro.Location = new Point(394, 85);
+            label_erro.BackColor = Color.FromArgb(64, 64, 64);
+            label_erro.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label_erro.ForeColor = Color.Red;
+            label_erro.Location = new Point(239, 407);
             label_erro.Name = "label_erro";
-            label_erro.Size = new Size(78, 28);
+            label_erro.Size = new Size(0, 17);
             label_erro.TabIndex = 22;
-            label_erro.Text = "retorno";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(64, 64, 64);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(389, 356);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 32);
+            button1.TabIndex = 23;
+            button1.Text = "Cancelar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // cadastrar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label_erro);
             Controls.Add(btn_cadastrar);
             Controls.Add(groupBox2);
@@ -365,9 +362,8 @@
             Controls.Add(menuStrip2);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "cadastrar";
             Text = "cadastrar";
             Load += cadastrar_Load;
@@ -385,10 +381,6 @@
 
         private PictureBox pictureBox1;
         private MenuStrip menuStrip2;
-        private ToolStripMenuItem toolStripMenuItem7;
-        private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem historicoToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem10;
         private ToolStripMenuItem toolStripMenuItem11;
         private ToolStripMenuItem loginToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
@@ -409,5 +401,9 @@
         private Button btn_cadastrar;
         private Label label_erro;
         private TextBox txt_telefone;
+        private Button button1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuItem4;
     }
 }
