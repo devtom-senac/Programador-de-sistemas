@@ -151,7 +151,15 @@ namespace costura
             MessageBox.Show("Pedido cadastrado com sucesso!");
             LimparCampos();
 
+            AbrirPedidos();
+        }
 
+        private void AbrirPedidos()
+        {
+            pedido pedido = new pedido();
+            pedido.Show();
+
+            this.Hide();
         }
 
         private void LimparCampos()

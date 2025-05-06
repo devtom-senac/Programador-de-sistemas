@@ -250,7 +250,7 @@
             // 
             cadastrarToolStripMenuItem.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem.Image");
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(184, 26);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
@@ -258,7 +258,7 @@
             // 
             toolStripMenuItem10.Image = (Image)resources.GetObject("toolStripMenuItem10.Image");
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(184, 26);
+            toolStripMenuItem10.Size = new Size(124, 22);
             toolStripMenuItem10.Text = "Pedido";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
             // 
