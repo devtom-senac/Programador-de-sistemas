@@ -73,12 +73,12 @@ namespace panorama.dominio
                 return "O telefone só deve ter numeros.";
             }
 
-            return string.Empty;
-
             if (Telefone.Length != 11)
             {
                 return "O telefone deve ter 11 digitos.";
-            }          
+            }
+
+            return string.Empty;
         }
 
         public string ValidarPreco()
@@ -118,8 +118,6 @@ namespace panorama.dominio
 
             return string.Empty;
         }
-
-
 
         public void Criar()
         {

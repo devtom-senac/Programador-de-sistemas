@@ -40,7 +40,7 @@
             toolStripMenuItem11 = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
-            button1 = new Button();
+            btn_novo = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
@@ -113,7 +113,7 @@
             // 
             toolStripMenuItem2.Image = (Image)resources.GetObject("toolStripMenuItem2.Image");
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(184, 26);
+            toolStripMenuItem2.Size = new Size(124, 22);
             toolStripMenuItem2.Text = "Cadastrar";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
@@ -121,7 +121,7 @@
             // 
             toolStripMenuItem3.Image = (Image)resources.GetObject("toolStripMenuItem3.Image");
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(184, 26);
+            toolStripMenuItem3.Size = new Size(124, 22);
             toolStripMenuItem3.Text = "home";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
@@ -147,18 +147,19 @@
             cadastrarToolStripMenuItem1.Size = new Size(124, 22);
             cadastrarToolStripMenuItem1.Text = "Cadastrar";
             // 
-            // button1
+            // btn_novo
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(310, 405);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 32);
-            button1.TabIndex = 25;
-            button1.Text = "novo";
-            button1.UseVisualStyleBackColor = false;
+            btn_novo.BackColor = Color.FromArgb(64, 64, 64);
+            btn_novo.FlatStyle = FlatStyle.Flat;
+            btn_novo.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_novo.ForeColor = SystemColors.ButtonHighlight;
+            btn_novo.Location = new Point(310, 405);
+            btn_novo.Name = "btn_novo";
+            btn_novo.Size = new Size(152, 32);
+            btn_novo.TabIndex = 25;
+            btn_novo.Text = "novo";
+            btn_novo.UseVisualStyleBackColor = false;
+            btn_novo.Click += button1_Click;
             // 
             // pedido
             // 
@@ -167,7 +168,7 @@
             AutoScroll = true;
             CausesValidation = false;
             ClientSize = new Size(817, 467);
-            Controls.Add(button1);
+            Controls.Add(btn_novo);
             Controls.Add(flow_pedidos);
             Controls.Add(lbl_pedido);
             Controls.Add(menuStrip2);
@@ -199,6 +200,6 @@
         private ToolStripMenuItem toolStripMenuItem11;
         private ToolStripMenuItem loginToolStripMenuItem;
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
-        private Button button1;
+        private Button btn_novo;
     }
 }

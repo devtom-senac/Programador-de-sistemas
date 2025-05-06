@@ -57,6 +57,7 @@
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
             pictureBox2 = new PictureBox();
             button1 = new Button();
+            label1 = new Label();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
@@ -306,11 +307,25 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.CadetBlue;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(344, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 30);
+            label1.TabIndex = 3;
+            label1.Text = "HOME";
+            // 
             // home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 438);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(menuStrip2);
             Controls.Add(pictureBox2);
@@ -359,5 +374,6 @@
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
         private PictureBox pictureBox2;
         private Button button1;
+        private Label label1;
     }
 }

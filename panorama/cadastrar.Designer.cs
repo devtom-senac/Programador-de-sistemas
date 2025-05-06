@@ -54,7 +54,7 @@
             txt_situacao = new TextBox();
             btn_cadastrar = new Button();
             label_erro = new Label();
-            button1 = new Button();
+            btn_cancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -94,7 +94,7 @@
             // 
             toolStripMenuItem3.Image = (Image)resources.GetObject("toolStripMenuItem3.Image");
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(184, 26);
+            toolStripMenuItem3.Size = new Size(111, 22);
             toolStripMenuItem3.Text = "home";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
@@ -102,7 +102,7 @@
             // 
             toolStripMenuItem4.Image = (Image)resources.GetObject("toolStripMenuItem4.Image");
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(184, 26);
+            toolStripMenuItem4.Size = new Size(111, 22);
             toolStripMenuItem4.Text = "Pedido";
             toolStripMenuItem4.Click += toolStripMenuItem4_Click;
             // 
@@ -144,7 +144,7 @@
             lbl_cadastrar.AutoSize = true;
             lbl_cadastrar.BackColor = Color.CadetBlue;
             lbl_cadastrar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_cadastrar.ForeColor = Color.Black;
+            lbl_cadastrar.ForeColor = Color.White;
             lbl_cadastrar.Location = new Point(276, 14);
             lbl_cadastrar.Name = "lbl_cadastrar";
             lbl_cadastrar.RightToLeft = RightToLeft.No;
@@ -181,28 +181,28 @@
             txt_telefone.Margin = new Padding(3, 2, 3, 2);
             txt_telefone.Name = "txt_telefone";
             txt_telefone.Size = new Size(110, 23);
-            txt_telefone.TabIndex = 21;
+            txt_telefone.TabIndex = 2;
             // 
             // txt_nome
             // 
             txt_nome.Location = new Point(18, 37);
             txt_nome.Name = "txt_nome";
             txt_nome.Size = new Size(246, 23);
-            txt_nome.TabIndex = 20;
+            txt_nome.TabIndex = 1;
             // 
             // txt_preco
             // 
             txt_preco.Location = new Point(150, 86);
             txt_preco.Name = "txt_preco";
             txt_preco.Size = new Size(112, 23);
-            txt_preco.TabIndex = 19;
+            txt_preco.TabIndex = 3;
             // 
             // txt_entrega
             // 
             txt_entrega.Location = new Point(17, 139);
             txt_entrega.Name = "txt_entrega";
             txt_entrega.Size = new Size(112, 23);
-            txt_entrega.TabIndex = 18;
+            txt_entrega.TabIndex = 4;
             // 
             // lbl_nome
             // 
@@ -300,7 +300,7 @@
             txt_pagamento.Location = new Point(150, 139);
             txt_pagamento.Name = "txt_pagamento";
             txt_pagamento.Size = new Size(112, 23);
-            txt_pagamento.TabIndex = 2;
+            txt_pagamento.TabIndex = 5;
             // 
             // txt_situacao
             // 
@@ -308,7 +308,7 @@
             txt_situacao.Location = new Point(17, 195);
             txt_situacao.Name = "txt_situacao";
             txt_situacao.Size = new Size(246, 23);
-            txt_situacao.TabIndex = 1;
+            txt_situacao.TabIndex = 6;
             // 
             // btn_cadastrar
             // 
@@ -319,7 +319,7 @@
             btn_cadastrar.Location = new Point(239, 356);
             btn_cadastrar.Name = "btn_cadastrar";
             btn_cadastrar.Size = new Size(129, 32);
-            btn_cadastrar.TabIndex = 21;
+            btn_cadastrar.TabIndex = 8;
             btn_cadastrar.Text = "Cadastrar";
             btn_cadastrar.UseVisualStyleBackColor = false;
             btn_cadastrar.Click += btn_cadastrar_Click;
@@ -335,26 +335,26 @@
             label_erro.Size = new Size(0, 17);
             label_erro.TabIndex = 22;
             // 
-            // button1
+            // btn_cancelar
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(389, 356);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 32);
-            button1.TabIndex = 23;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btn_cancelar.BackColor = Color.FromArgb(64, 64, 64);
+            btn_cancelar.FlatStyle = FlatStyle.Flat;
+            btn_cancelar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_cancelar.ForeColor = SystemColors.ButtonHighlight;
+            btn_cancelar.Location = new Point(389, 356);
+            btn_cancelar.Name = "btn_cancelar";
+            btn_cancelar.Size = new Size(129, 32);
+            btn_cancelar.TabIndex = 7;
+            btn_cancelar.Text = "Cancelar";
+            btn_cancelar.UseVisualStyleBackColor = false;
+            btn_cancelar.Click += button1_Click;
             // 
             // cadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btn_cancelar);
             Controls.Add(label_erro);
             Controls.Add(btn_cadastrar);
             Controls.Add(groupBox2);
@@ -401,7 +401,7 @@
         private Button btn_cadastrar;
         private Label label_erro;
         private TextBox txt_telefone;
-        private Button button1;
+        private Button btn_cancelar;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem3;
         private ToolStripMenuItem toolStripMenuItem4;

@@ -39,60 +39,60 @@
             // lbl_nome
             // 
             lbl_nome.AutoSize = true;
-            lbl_nome.Location = new Point(149, 20);
+            lbl_nome.Location = new Point(130, 25);
             lbl_nome.Name = "lbl_nome";
-            lbl_nome.Size = new Size(52, 20);
+            lbl_nome.Size = new Size(42, 15);
             lbl_nome.TabIndex = 0;
             lbl_nome.Text = "NOME";
             // 
             // lbl_telefone
             // 
             lbl_telefone.AutoSize = true;
-            lbl_telefone.Location = new Point(42, 94);
+            lbl_telefone.Location = new Point(37, 70);
             lbl_telefone.Name = "lbl_telefone";
-            lbl_telefone.Size = new Size(77, 20);
+            lbl_telefone.Size = new Size(61, 15);
             lbl_telefone.TabIndex = 1;
             lbl_telefone.Text = "TELEFONE";
             // 
             // lbl_preco
             // 
             lbl_preco.AutoSize = true;
-            lbl_preco.Location = new Point(254, 94);
+            lbl_preco.Location = new Point(222, 70);
             lbl_preco.Name = "lbl_preco";
-            lbl_preco.Size = new Size(54, 20);
+            lbl_preco.Size = new Size(44, 15);
             lbl_preco.TabIndex = 2;
             lbl_preco.Text = "PRECO";
             // 
             // lbl_entrega
             // 
             lbl_entrega.AutoSize = true;
-            lbl_entrega.Location = new Point(42, 183);
+            lbl_entrega.Location = new Point(37, 137);
             lbl_entrega.Name = "lbl_entrega";
-            lbl_entrega.Size = new Size(73, 20);
+            lbl_entrega.Size = new Size(57, 15);
             lbl_entrega.TabIndex = 3;
             lbl_entrega.Text = "ENTREGA";
             // 
             // lbl_pagamento
             // 
             lbl_pagamento.AutoSize = true;
-            lbl_pagamento.Location = new Point(233, 183);
+            lbl_pagamento.Location = new Point(204, 137);
             lbl_pagamento.Name = "lbl_pagamento";
-            lbl_pagamento.Size = new Size(96, 20);
+            lbl_pagamento.Size = new Size(77, 15);
             lbl_pagamento.TabIndex = 4;
             lbl_pagamento.Text = "PAGAMENTO";
             // 
             // lbl_situacao
             // 
             lbl_situacao.AutoSize = true;
-            lbl_situacao.Location = new Point(122, 286);
+            lbl_situacao.Location = new Point(109, 216);
             lbl_situacao.Name = "lbl_situacao";
-            lbl_situacao.Size = new Size(79, 20);
+            lbl_situacao.Size = new Size(63, 15);
             lbl_situacao.TabIndex = 5;
             lbl_situacao.Text = "SITUAÇÃO";
             // 
             // PedidoCard
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl_situacao);
             Controls.Add(lbl_pagamento);
@@ -100,8 +100,9 @@
             Controls.Add(lbl_preco);
             Controls.Add(lbl_telefone);
             Controls.Add(lbl_nome);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "PedidoCard";
-            Size = new Size(365, 363);
+            Size = new Size(319, 272);
             ResumeLayout(false);
             PerformLayout();
         }
