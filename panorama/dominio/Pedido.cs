@@ -81,6 +81,15 @@ namespace panorama.dominio
             return string.Empty;
         }
 
+        public string ValidarPagamento()
+        {
+            if (string.IsNullOrWhiteSpace(Pagamento))
+            {
+                return "O pagamento não pode ser vazio.";
+            }
+            return string.Empty;
+        }
+
         public string ValidarPreco()
         {
             if (Preco < 0)
@@ -95,16 +104,6 @@ namespace panorama.dominio
             if (DataEntrega < DateTime.Now)
             {
                 return "A data deve ser uma data futura.";
-            }
-            return string.Empty;
-        }
-
-
-        public string ValidarPagamento()
-        {
-            if (string.IsNullOrWhiteSpace(Pagamento))
-            {
-                return "O pagamento não pode ser vazio.";
             }
             return string.Empty;
         }

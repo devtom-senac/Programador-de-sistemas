@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
-            lbl_preco = new TextBox();
-            lbl_entrega = new TextBox();
+            txb_preco = new TextBox();
+            txb_entrega = new TextBox();
             label1 = new Label();
             label15 = new Label();
             label2 = new Label();
             label3 = new Label();
             lbl_status = new Label();
             label4 = new Label();
-            lbl_pagamento = new TextBox();
-            lbl_situacao = new TextBox();
-            lbl_nome = new TextBox();
-            lbl_telefone = new TextBox();
+            txb_pagamento = new TextBox();
+            txb_situacao = new TextBox();
+            txb_nome = new TextBox();
+            txb_telefone = new TextBox();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,37 +48,40 @@
             // 
             groupBox2.BackColor = Color.FromArgb(64, 64, 64);
             groupBox2.BackgroundImageLayout = ImageLayout.None;
-            groupBox2.Controls.Add(lbl_preco);
-            groupBox2.Controls.Add(lbl_entrega);
+            groupBox2.Controls.Add(txb_preco);
+            groupBox2.Controls.Add(txb_entrega);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(label15);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(lbl_status);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(lbl_pagamento);
-            groupBox2.Controls.Add(lbl_situacao);
-            groupBox2.Controls.Add(lbl_nome);
-            groupBox2.Controls.Add(lbl_telefone);
+            groupBox2.Controls.Add(txb_pagamento);
+            groupBox2.Controls.Add(txb_situacao);
+            groupBox2.Controls.Add(txb_nome);
+            groupBox2.Controls.Add(txb_telefone);
             groupBox2.Location = new Point(3, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(284, 226);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
+            groupBox2.Enter += groupBox2_Enter;
             // 
-            // lbl_preco
+            // txb_preco
             // 
-            lbl_preco.Location = new Point(150, 86);
-            lbl_preco.Name = "lbl_preco";
-            lbl_preco.Size = new Size(112, 23);
-            lbl_preco.TabIndex = 3;
+            txb_preco.Enabled = false;
+            txb_preco.Location = new Point(150, 86);
+            txb_preco.Name = "txb_preco";
+            txb_preco.Size = new Size(112, 23);
+            txb_preco.TabIndex = 3;
             // 
-            // lbl_entrega
+            // txb_entrega
             // 
-            lbl_entrega.Location = new Point(17, 139);
-            lbl_entrega.Name = "lbl_entrega";
-            lbl_entrega.Size = new Size(112, 23);
-            lbl_entrega.TabIndex = 4;
+            txb_entrega.Enabled = false;
+            txb_entrega.Location = new Point(17, 139);
+            txb_entrega.Name = "txb_entrega";
+            txb_entrega.Size = new Size(112, 23);
+            txb_entrega.TabIndex = 4;
             // 
             // label1
             // 
@@ -170,36 +173,40 @@
             label4.Text = "TELEFONE ";
             label4.UseMnemonic = false;
             // 
-            // lbl_pagamento
+            // txb_pagamento
             // 
-            lbl_pagamento.BackColor = SystemColors.HighlightText;
-            lbl_pagamento.Location = new Point(150, 139);
-            lbl_pagamento.Name = "lbl_pagamento";
-            lbl_pagamento.Size = new Size(112, 23);
-            lbl_pagamento.TabIndex = 5;
+            txb_pagamento.BackColor = SystemColors.HighlightText;
+            txb_pagamento.Enabled = false;
+            txb_pagamento.Location = new Point(150, 139);
+            txb_pagamento.Name = "txb_pagamento";
+            txb_pagamento.Size = new Size(112, 23);
+            txb_pagamento.TabIndex = 5;
             // 
-            // lbl_situacao
+            // txb_situacao
             // 
-            lbl_situacao.BackColor = SystemColors.ButtonHighlight;
-            lbl_situacao.Location = new Point(17, 195);
-            lbl_situacao.Name = "lbl_situacao";
-            lbl_situacao.Size = new Size(246, 23);
-            lbl_situacao.TabIndex = 6;
+            txb_situacao.BackColor = SystemColors.ButtonHighlight;
+            txb_situacao.Enabled = false;
+            txb_situacao.Location = new Point(17, 195);
+            txb_situacao.Name = "txb_situacao";
+            txb_situacao.Size = new Size(246, 23);
+            txb_situacao.TabIndex = 6;
             // 
-            // lbl_nome
+            // txb_nome
             // 
-            lbl_nome.Location = new Point(18, 38);
-            lbl_nome.Name = "lbl_nome";
-            lbl_nome.Size = new Size(246, 23);
-            lbl_nome.TabIndex = 1;
+            txb_nome.Enabled = false;
+            txb_nome.Location = new Point(18, 38);
+            txb_nome.Name = "txb_nome";
+            txb_nome.Size = new Size(246, 23);
+            txb_nome.TabIndex = 1;
             // 
-            // lbl_telefone
+            // txb_telefone
             // 
-            lbl_telefone.Location = new Point(18, 85);
-            lbl_telefone.Margin = new Padding(3, 2, 3, 2);
-            lbl_telefone.Name = "lbl_telefone";
-            lbl_telefone.Size = new Size(110, 23);
-            lbl_telefone.TabIndex = 2;
+            txb_telefone.Enabled = false;
+            txb_telefone.Location = new Point(18, 85);
+            txb_telefone.Margin = new Padding(3, 2, 3, 2);
+            txb_telefone.Name = "txb_telefone";
+            txb_telefone.Size = new Size(110, 23);
+            txb_telefone.TabIndex = 2;
             // 
             // PedidoCard
             // 
@@ -216,17 +223,17 @@
 
         #endregion
         private GroupBox groupBox2;
-        private TextBox lbl_telefone;
-        private TextBox lbl_nome;
-        private TextBox lbl_preco;
-        private TextBox lbl_entrega;
+        private TextBox txb_telefone;
+        private TextBox txb_nome;
+        private TextBox txb_preco;
+        private TextBox txb_entrega;
         private Label label1;
         private Label label15;
         private Label label2;
         private Label label3;
         private Label lbl_status;
         private Label label4;
-        private TextBox lbl_pagamento;
-        private TextBox lbl_situacao;
+        private TextBox txb_pagamento;
+        private TextBox txb_situacao;
     }
 }

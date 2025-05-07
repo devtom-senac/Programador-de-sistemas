@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aJ4L/E8GSVM=",
+  "dgSpecHash": "D+IDXYe6024=",
   "success": true,
-  "projectFilePath": "C:\\Users\\heverton.nsouza\\source\\repos\\Programador-de-sistemas\\panorama\\panorama.csproj",
+  "projectFilePath": "C:\\Users\\heverton.nsouza\\source\\Programador-de-sistemas\\panorama\\panorama.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\heverton.nsouza\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\heverton.nsouza\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",

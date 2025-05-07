@@ -42,7 +42,6 @@
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
             btn_novo = new Button();
             btn_atualizar = new Button();
-            btn_excluir = new Button();
             btn_historico = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,9 +87,9 @@
             flow_pedidos.AutoScroll = true;
             flow_pedidos.BackColor = Color.Gray;
             flow_pedidos.ForeColor = SystemColors.ControlLightLight;
-            flow_pedidos.Location = new Point(89, 79);
+            flow_pedidos.Location = new Point(12, 58);
             flow_pedidos.Name = "flow_pedidos";
-            flow_pedidos.Size = new Size(587, 320);
+            flow_pedidos.Size = new Size(774, 341);
             flow_pedidos.TabIndex = 29;
             // 
             // menuStrip2
@@ -156,7 +155,7 @@
             btn_novo.FlatStyle = FlatStyle.Flat;
             btn_novo.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_novo.ForeColor = SystemColors.ButtonHighlight;
-            btn_novo.Location = new Point(89, 405);
+            btn_novo.Location = new Point(190, 405);
             btn_novo.Name = "btn_novo";
             btn_novo.Size = new Size(133, 32);
             btn_novo.TabIndex = 25;
@@ -170,25 +169,13 @@
             btn_atualizar.FlatStyle = FlatStyle.Flat;
             btn_atualizar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_atualizar.ForeColor = SystemColors.ButtonHighlight;
-            btn_atualizar.Location = new Point(238, 405);
+            btn_atualizar.Location = new Point(329, 405);
             btn_atualizar.Name = "btn_atualizar";
             btn_atualizar.Size = new Size(133, 32);
             btn_atualizar.TabIndex = 31;
             btn_atualizar.Text = "atualizar";
             btn_atualizar.UseVisualStyleBackColor = false;
-            // 
-            // btn_excluir
-            // 
-            btn_excluir.BackColor = Color.FromArgb(64, 64, 64);
-            btn_excluir.FlatStyle = FlatStyle.Flat;
-            btn_excluir.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_excluir.ForeColor = SystemColors.ButtonHighlight;
-            btn_excluir.Location = new Point(390, 405);
-            btn_excluir.Name = "btn_excluir";
-            btn_excluir.Size = new Size(133, 32);
-            btn_excluir.TabIndex = 32;
-            btn_excluir.Text = "excluir";
-            btn_excluir.UseVisualStyleBackColor = false;
+            btn_atualizar.Click += btn_atualizar_Click;
             // 
             // btn_historico
             // 
@@ -196,7 +183,7 @@
             btn_historico.FlatStyle = FlatStyle.Flat;
             btn_historico.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_historico.ForeColor = SystemColors.ButtonHighlight;
-            btn_historico.Location = new Point(543, 405);
+            btn_historico.Location = new Point(474, 405);
             btn_historico.Name = "btn_historico";
             btn_historico.Size = new Size(133, 32);
             btn_historico.TabIndex = 33;
@@ -212,7 +199,6 @@
             ClientSize = new Size(817, 467);
             Controls.Add(btn_historico);
             Controls.Add(btn_atualizar);
-            Controls.Add(btn_excluir);
             Controls.Add(btn_novo);
             Controls.Add(flow_pedidos);
             Controls.Add(lbl_pedido);
@@ -247,7 +233,6 @@
         private ToolStripMenuItem cadastrarToolStripMenuItem1;
         private Button btn_novo;
         private Button btn_atualizar;
-        private Button btn_excluir;
         private Button btn_historico;
     }
 }

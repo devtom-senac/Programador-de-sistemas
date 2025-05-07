@@ -15,36 +15,81 @@ namespace panorama
         public PedidoCard()
         {
             InitializeComponent();
+            HabilitarEdicao(false);
+            ConfigurarClique();
         }
 
         public string NomeCliente
         {
-            set { lbl_nome.Text =  value; }
+            get { return txb_nome.Text; }
+            set { txb_nome.Text = value; }
         }
 
         public string Telefone
         {
-            set { lbl_telefone.Text =  value; }
+            get { return txb_telefone.Text; }
+            set { txb_telefone.Text = value; }
         }
 
         public decimal Preco
         {
-            set { lbl_preco.Text = value.ToString("F2"); }
+            get
+            {
+                decimal preco;
+                decimal.TryParse(txb_preco.Text, out preco);
+                return preco;
+            }
+            set { txb_preco.Text = value.ToString("F2"); }
         }
 
         public string Pagamento
         {
-            set { lbl_pagamento.Text = value; }
+            get { return txb_pagamento.Text; }
+            set { txb_pagamento.Text = value; }
         }
 
         public DateTime DataEntrega
         {
-            set { lbl_entrega.Text = value.ToShortDateString(); }
+            get
+            {
+                DateTime data;
+                DateTime.TryParse(txb_entrega.Text, out data);
+                return data;
+            }
+            set { txb_entrega.Text = value.ToShortDateString(); }
         }
 
         public string Situacao
         {
-            set { lbl_situacao.Text = value; }
+            get { return txb_situacao.Text; }
+            set { txb_situacao.Text = value; }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        public void HabilitarEdicao(bool habilitar)
+        {
+            txb_nome.Enabled = habilitar;
+            txb_telefone.Enabled = habilitar;
+            txb_preco.Enabled = habilitar;
+            txb_pagamento.Enabled = habilitar;
+            txb_entrega.Enabled = habilitar;
+            txb_situacao.Enabled = habilitar;
+        }
+
+        private void ConfigurarClique()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.Click += (s, e) => this.OnClick(e); // Faz qualquer clique interno acionar o clique do card
+            }
+        }
+
+       
+
+
     }
 }

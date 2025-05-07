@@ -93,5 +93,36 @@ namespace panorama.repositorio
             // Retorna a lista completa com os pedidos encontrados
             return pedidos;
         }
+
+        // Metodo que atualiza o pedido quando clicar no botão atualizar 
+        public void Atualizar(Pedido pedido)
+        {
+            using (MySqlConnection conn = new MySqlConnection("sua_string_de_conexao_aqui"))
+            {
+                conn.Open();
+
+                string sql = @"UPDATE pedidos 
+                       SET nome_cliente = @nome, 
+                           telefone = @telefone, 
+                           preco = @preco, 
+                           pagamento = @pagamento, 
+                           data_entrega = @entrega, 
+                           situacao = @situacao 
+                       WHERE id = @id";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", pedido.NomeCliente);
+                    cmd.Parameters.AddWithValue("@telefone", pedido.Telefone);
+                    cmd.Parameters.AddWithValue("@preco", pedido.Preco);
+                    cmd.Parameters.AddWithValue("@pagamento", pedido.Pagamento);
+                    cmd.Parameters.AddWithValue("@entrega", pedido.DataEntrega);
+                    cmd.Parameters.AddWithValue("@situacao", pedido.Situacao);
+                    cmd.Parameters.AddWithValue("@id", pedido.Id); // ⚠️ Você precisa garantir que o pedido tenha o ID preenchido
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
