@@ -216,6 +216,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "PedidoCard";
             Size = new Size(287, 228);
+            Load += PedidoCard_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);

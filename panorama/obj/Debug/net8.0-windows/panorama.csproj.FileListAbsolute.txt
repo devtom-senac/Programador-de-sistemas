@@ -115,3 +115,4 @@ C:\Users\heverton.nsouza\source\Programador-de-sistemas\panorama\obj\Debug\net8.
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\panorama\obj\Debug\net8.0-windows\panorama.pdb
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\panorama\obj\Debug\net8.0-windows\panorama.genruntimeconfig.cache
 C:\Users\heverton.nsouza\source\Programador-de-sistemas\panorama\obj\Debug\net8.0-windows\ref\panorama.dll
+C:\Users\heverton.nsouza\source\Programador-de-sistemas\panorama\obj\Debug\net8.0-windows\panorama.historico.resources

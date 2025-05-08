@@ -12,6 +12,8 @@ namespace panorama
 {
     public partial class PedidoCard : UserControl
     {
+        public int Id { get; set; }
+
         public PedidoCard()
         {
             InitializeComponent();
@@ -88,8 +90,13 @@ namespace panorama
             }
         }
 
-       
-
-
+        private void PedidoCard_Load(object sender, EventArgs e)
+        {
+            // Deixa todos os campos em maiúsculo
+            txb_nome.CharacterCasing = CharacterCasing.Upper;
+            txb_telefone.CharacterCasing = CharacterCasing.Upper;
+            txb_pagamento.CharacterCasing = CharacterCasing.Upper;
+            txb_situacao.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }

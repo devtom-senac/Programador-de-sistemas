@@ -189,6 +189,7 @@
             btn_historico.TabIndex = 33;
             btn_historico.Text = "historico";
             btn_historico.UseVisualStyleBackColor = false;
+            btn_historico.Click += btn_historico_Click;
             // 
             // pedido
             // 

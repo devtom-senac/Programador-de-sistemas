@@ -9,7 +9,7 @@ namespace panorama.bancoDeDados
 {
     internal class DataBase
     {
-        // String de conexão com o banco (host, usuário, senha e nome do banco)
+        // String de conexão com o banco 
         private static readonly string ConnectionString = "datasource=localhost;username=root;password=;database=panorama;";
 
         // Método que retorna uma nova conexão com o banco de dados

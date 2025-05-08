@@ -1,6 +1,9 @@
-﻿using panorama;
+﻿using MySql.Data.MySqlClient;
+using panorama;
+using panorama.bancoDeDados;
 using panorama.dominio;
 using panorama.repositorio;
+using System.Collections.Generic;
 
 
 namespace costura
@@ -48,8 +51,8 @@ namespace costura
             // Cria o repositório que acessa o banco
             PedidoRepositorio repositorio = new PedidoRepositorio();
 
-            // Pega todos os pedidos cadastrados no banco
-            List<Pedido> listaPedidos = repositorio.Listar();
+            // Pega todos os pedidos que estão ativos no banco (não estão cancelados e nem concluidos)
+            List<Pedido> listaPedidos = repositorio.ListarPedidosAtivos();
 
             // Limpa o painel onde os cards vão ser exibidos
             flow_pedidos.Controls.Clear();
@@ -61,6 +64,7 @@ namespace costura
                 var card = new PedidoCard();
 
                 // Preenche os dados do card com as informações do pedido
+                card.Id = pedido.Id;
                 card.NomeCliente = pedido.NomeCliente;
                 card.Telefone = pedido.Telefone;
                 card.Preco = pedido.Preco;
@@ -123,12 +127,12 @@ namespace costura
             {
                 if (cardSelecionado == null)
                 {
-                    MessageBox.Show("Selecione um pedido primeiro clicando em um card.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Clique em um pedido para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 cardSelecionado.HabilitarEdicao(true);
-                btn_atualizar.Text = "Salvar";
+                btn_atualizar.Text = "SALVAR";
                 emEdicao = true;
             }
             else
@@ -136,6 +140,7 @@ namespace costura
                 // Pega os dados atualizados
                 var pedidoAtualizado = new Pedido
                 {
+                    Id = cardSelecionado.Id,
                     NomeCliente = cardSelecionado.NomeCliente,
                     Telefone = cardSelecionado.Telefone,
                     Preco = cardSelecionado.Preco,
@@ -147,21 +152,33 @@ namespace costura
                 PedidoRepositorio repo = new PedidoRepositorio();
                 repo.Atualizar(pedidoAtualizado);
 
-                // Se for "concluído" ou "cancelado", enviar para histórico (em breve)
+                // Mostra mensagem de sucesso
+                MessageBox.Show("Pedido atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Se for "concluído" ou "cancelado", remover da tela
                 string status = pedidoAtualizado.Situacao.ToLower();
                 if (status == "concluído" || status == "cancelado")
                 {
                     flow_pedidos.Controls.Remove(cardSelecionado);
-                    // ➕ Aqui você pode mover para o form de histórico futuramente
+                    // ➕ Em breve: adicionar ao histórico
                 }
 
                 cardSelecionado.HabilitarEdicao(false);
                 cardSelecionado.BackColor = SystemColors.Control;
-
                 btn_atualizar.Text = "Atualizar";
                 emEdicao = false;
                 cardSelecionado = null;
             }
         }
+
+        private void btn_historico_Click(object sender, EventArgs e)
+        {
+            historico historico = new historico();
+            historico.Show();
+
+            this.Hide();
+        }
+
+       
     }
 }

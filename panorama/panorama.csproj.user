@@ -4,6 +4,9 @@
     <Compile Update="cadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="home.cs">
       <SubType>Form</SubType>
     </Compile>
