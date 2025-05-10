@@ -43,6 +43,7 @@
             btn_novo = new Button();
             btn_atualizar = new Button();
             btn_historico = new Button();
+            históricoToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip2.SuspendLayout();
@@ -51,9 +52,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 12);
+            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(813, 459);
+            pictureBox2.Size = new Size(796, 463);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 22;
             pictureBox2.TabStop = false;
@@ -87,9 +88,9 @@
             flow_pedidos.AutoScroll = true;
             flow_pedidos.BackColor = Color.Gray;
             flow_pedidos.ForeColor = SystemColors.ControlLightLight;
-            flow_pedidos.Location = new Point(12, 58);
+            flow_pedidos.Location = new Point(167, 58);
             flow_pedidos.Name = "flow_pedidos";
-            flow_pedidos.Size = new Size(774, 341);
+            flow_pedidos.Size = new Size(466, 341);
             flow_pedidos.TabIndex = 29;
             // 
             // menuStrip2
@@ -99,13 +100,13 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem11 });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(813, 28);
+            menuStrip2.Size = new Size(808, 28);
             menuStrip2.TabIndex = 30;
             menuStrip2.Text = "menuStrip2";
             // 
             // toolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3 });
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, históricoToolStripMenuItem });
             toolStripMenuItem1.Image = (Image)resources.GetObject("toolStripMenuItem1.Image");
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(42, 24);
@@ -183,7 +184,7 @@
             btn_historico.FlatStyle = FlatStyle.Flat;
             btn_historico.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_historico.ForeColor = SystemColors.ButtonHighlight;
-            btn_historico.Location = new Point(474, 405);
+            btn_historico.Location = new Point(468, 405);
             btn_historico.Name = "btn_historico";
             btn_historico.Size = new Size(133, 32);
             btn_historico.TabIndex = 33;
@@ -191,13 +192,21 @@
             btn_historico.UseVisualStyleBackColor = false;
             btn_historico.Click += btn_historico_Click;
             // 
+            // históricoToolStripMenuItem
+            // 
+            históricoToolStripMenuItem.Image = (Image)resources.GetObject("históricoToolStripMenuItem.Image");
+            históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            históricoToolStripMenuItem.Size = new Size(184, 26);
+            históricoToolStripMenuItem.Text = "Histórico";
+            históricoToolStripMenuItem.Click += históricoToolStripMenuItem_Click;
+            // 
             // pedido
             // 
             AccessibleRole = AccessibleRole.None;
             AutoScaleMode = AutoScaleMode.None;
             AutoScroll = true;
             CausesValidation = false;
-            ClientSize = new Size(817, 467);
+            ClientSize = new Size(806, 467);
             Controls.Add(btn_historico);
             Controls.Add(btn_atualizar);
             Controls.Add(btn_novo);
@@ -235,5 +244,6 @@
         private Button btn_novo;
         private Button btn_atualizar;
         private Button btn_historico;
+        private ToolStripMenuItem históricoToolStripMenuItem;
     }
 }

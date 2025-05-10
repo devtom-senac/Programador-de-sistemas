@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using panorama;
 using panorama.dominio;
+using MySql.Data.MySqlClient;
+using panorama.bancoDeDados;
+using costura;
+
 
 namespace panorama
 {
@@ -20,28 +24,49 @@ namespace panorama
             InitializeComponent();
         }
 
-        private void CarregarHistorico()
-        {
-            PedidoRepositorio repositorio = new PedidoRepositorio();
-            List<Pedido> pedidosFinalizados = repositorio.ListarPedidosFinalizados();
 
-
-            dataGridHistorico.DataSource = null; // limpa antes
-            dataGridHistorico.DataSource = pedidosFinalizados;
-
-            // Opcional: ajustar nomes das colunas
-            dataGridHistorico.Columns["Id"].HeaderText = "Código";
-            dataGridHistorico.Columns["NomeCliente"].HeaderText = "Cliente";
-            dataGridHistorico.Columns["Telefone"].HeaderText = "Telefone";
-            dataGridHistorico.Columns["Preco"].HeaderText = "Preço";
-            dataGridHistorico.Columns["Pagamento"].HeaderText = "Pagamento";
-            dataGridHistorico.Columns["DataEntrega"].HeaderText = "Entrega";
-            dataGridHistorico.Columns["Situacao"].HeaderText = "Status";
-        }
 
         private void historico_Load(object sender, EventArgs e)
         {
             CarregarHistorico();
+        }
+
+        private void CarregarHistorico()
+        {
+            string query = "SELECT * FROM pedido WHERE situacao = 'concluído' OR situacao = 'cancelado'";
+
+            using (MySqlConnection conexao = DataBase.GetConnection())
+            {
+                conexao.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+                    dataGridHistorico.DataSource = dt;
+                }
+            }
+        }
+
+        private void lbl_cadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            home home = new home();
+            home.Show();
+
+            this.Hide();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            pedido pedido = new pedido();
+            pedido.Show();
+
+            this.Hide();
         }
     }
 }

@@ -86,7 +86,7 @@ namespace costura
                     }
 
                     // Apenas destaca visualmente o card clicado
-                    card.BackColor = Color.LightBlue;
+                    card.BackColor = Color.Red;
 
                     // Define como o card selecionado
                     cardSelecionado = card;
@@ -179,6 +179,12 @@ namespace costura
             this.Hide();
         }
 
-       
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            historico Historico = new historico();
+            Historico.Show();
+
+            this.Hide();
+        }
     }
 }

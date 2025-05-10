@@ -188,29 +188,30 @@ namespace panorama.repositorio
         public List<Pedido> ListarPedidosFinalizados()
         {
             List<Pedido> pedidos = new List<Pedido>();
+            string query = "SELECT * FROM pedido WHERE situacao = 'concluído' OR situacao = 'cancelado'";
 
-            string query = "SELECT * FROM pedidos WHERE LOWER(situacao) IN ('concluído', 'cancelado')";
 
-            using var conexao = DataBase.GetConnection();
-            conexao.Open();
+            using (var conexao = DataBase.GetConnection())
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Pedido p = new Pedido
+                        Pedido pedido = new Pedido
                         {
-                            Id = reader.GetInt32("id"),
-                            NomeCliente = reader.GetString("nome_cliente"),
-                            Telefone = reader.GetString("telefone"),
-                            Preco = reader.GetDecimal("preco"),
-                            Pagamento = reader.GetString("pagamento"),
-                            DataEntrega = reader.GetDateTime("data_entrega"),
-                            Situacao = reader.GetString("situacao")
+                            Id = Convert.ToInt32(reader["id"]),
+                            NomeCliente = reader["nomeCliente"].ToString(),
+                            Telefone = reader["telefone"].ToString(),
+                            Preco = Convert.ToDecimal(reader["preco"]),
+                            Pagamento = reader["pagamento"].ToString(),
+                            DataEntrega = Convert.ToDateTime(reader["dataEntrega"]),
+                            Situacao = reader["situacao"].ToString()
                         };
-                        pedidos.Add(p);
+
+                        pedidos.Add(pedido);
                     }
                 }
             }

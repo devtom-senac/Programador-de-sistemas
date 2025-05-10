@@ -52,6 +52,7 @@
             toolStripMenuItem7 = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem10 = new ToolStripMenuItem();
+            históricoToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem11 = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
@@ -234,13 +235,13 @@
             menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem7, toolStripMenuItem11 });
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(800, 28);
+            menuStrip2.Size = new Size(782, 28);
             menuStrip2.TabIndex = 2;
             menuStrip2.Text = "menuStrip2";
             // 
             // toolStripMenuItem7
             // 
-            toolStripMenuItem7.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, toolStripMenuItem10 });
+            toolStripMenuItem7.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem, toolStripMenuItem10, históricoToolStripMenuItem });
             toolStripMenuItem7.Image = (Image)resources.GetObject("toolStripMenuItem7.Image");
             toolStripMenuItem7.Name = "toolStripMenuItem7";
             toolStripMenuItem7.Size = new Size(42, 24);
@@ -250,7 +251,7 @@
             // 
             cadastrarToolStripMenuItem.Image = (Image)resources.GetObject("cadastrarToolStripMenuItem.Image");
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(124, 22);
+            cadastrarToolStripMenuItem.Size = new Size(184, 26);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             cadastrarToolStripMenuItem.Click += cadastrarToolStripMenuItem_Click;
             // 
@@ -258,9 +259,17 @@
             // 
             toolStripMenuItem10.Image = (Image)resources.GetObject("toolStripMenuItem10.Image");
             toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(124, 22);
+            toolStripMenuItem10.Size = new Size(184, 26);
             toolStripMenuItem10.Text = "Pedido";
             toolStripMenuItem10.Click += toolStripMenuItem10_Click;
+            // 
+            // históricoToolStripMenuItem
+            // 
+            históricoToolStripMenuItem.Image = (Image)resources.GetObject("históricoToolStripMenuItem.Image");
+            históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            históricoToolStripMenuItem.Size = new Size(184, 26);
+            históricoToolStripMenuItem.Text = "Histórico";
+            históricoToolStripMenuItem.Click += históricoToolStripMenuItem_Click;
             // 
             // toolStripMenuItem11
             // 
@@ -324,7 +333,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 438);
+            ClientSize = new Size(782, 446);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(menuStrip2);
@@ -375,5 +384,6 @@
         private PictureBox pictureBox2;
         private Button button1;
         private Label label1;
+        private ToolStripMenuItem históricoToolStripMenuItem;
     }
 }

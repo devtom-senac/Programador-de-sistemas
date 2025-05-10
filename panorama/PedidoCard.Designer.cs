@@ -31,7 +31,6 @@
             groupBox2 = new GroupBox();
             txb_preco = new TextBox();
             txb_entrega = new TextBox();
-            label1 = new Label();
             label15 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -41,6 +40,7 @@
             txb_situacao = new TextBox();
             txb_nome = new TextBox();
             txb_telefone = new TextBox();
+            label1 = new Label();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -82,21 +82,6 @@
             txb_entrega.Name = "txb_entrega";
             txb_entrega.Size = new Size(112, 23);
             txb_entrega.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AccessibleRole = AccessibleRole.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(106, 15);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(68, 20);
-            label1.TabIndex = 16;
-            label1.Text = "CLIENTE";
-            label1.UseMnemonic = false;
             // 
             // label15
             // 
@@ -208,6 +193,21 @@
             txb_telefone.Size = new Size(110, 23);
             txb_telefone.TabIndex = 2;
             // 
+            // label1
+            // 
+            label1.AccessibleRole = AccessibleRole.None;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(99, 15);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.No;
+            label1.Size = new Size(68, 20);
+            label1.TabIndex = 16;
+            label1.Text = "CLIENTE";
+            label1.UseMnemonic = false;
+            // 
             // PedidoCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -228,7 +228,6 @@
         private TextBox txb_nome;
         private TextBox txb_preco;
         private TextBox txb_entrega;
-        private Label label1;
         private Label label15;
         private Label label2;
         private Label label3;
@@ -236,5 +235,6 @@
         private Label label4;
         private TextBox txb_pagamento;
         private TextBox txb_situacao;
+        private Label label1;
     }
 }

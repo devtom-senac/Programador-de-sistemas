@@ -1,4 +1,5 @@
-﻿﻿using panorama.dominio;
+﻿using panorama;
+using panorama.dominio;
 using panorama.repositorio;
 using System;
 using System.Collections.Generic;
@@ -199,6 +200,19 @@ namespace costura
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbl_cadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            historico Historico = new historico();
+            Historico.Show();
+
+            this.Hide();
         }
     }
 }

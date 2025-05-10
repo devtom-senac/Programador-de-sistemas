@@ -34,6 +34,7 @@
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem3 = new ToolStripMenuItem();
             toolStripMenuItem4 = new ToolStripMenuItem();
+            históricoToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem11 = new ToolStripMenuItem();
             loginToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem1 = new ToolStripMenuItem();
@@ -66,7 +67,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, -45);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(808, 503);
+            pictureBox1.Size = new Size(805, 495);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -84,7 +85,7 @@
             // 
             // toolStripMenuItem1
             // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem3, toolStripMenuItem4 });
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem3, toolStripMenuItem4, históricoToolStripMenuItem });
             toolStripMenuItem1.Image = (Image)resources.GetObject("toolStripMenuItem1.Image");
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(42, 24);
@@ -94,7 +95,7 @@
             // 
             toolStripMenuItem3.Image = (Image)resources.GetObject("toolStripMenuItem3.Image");
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(111, 22);
+            toolStripMenuItem3.Size = new Size(184, 26);
             toolStripMenuItem3.Text = "home";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
@@ -102,9 +103,17 @@
             // 
             toolStripMenuItem4.Image = (Image)resources.GetObject("toolStripMenuItem4.Image");
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(111, 22);
+            toolStripMenuItem4.Size = new Size(184, 26);
             toolStripMenuItem4.Text = "Pedido";
             toolStripMenuItem4.Click += toolStripMenuItem4_Click;
+            // 
+            // históricoToolStripMenuItem
+            // 
+            históricoToolStripMenuItem.Image = (Image)resources.GetObject("históricoToolStripMenuItem.Image");
+            históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            históricoToolStripMenuItem.Size = new Size(184, 26);
+            históricoToolStripMenuItem.Text = "Histórico";
+            históricoToolStripMenuItem.Click += históricoToolStripMenuItem_Click;
             // 
             // toolStripMenuItem11
             // 
@@ -133,7 +142,7 @@
             pictureBox2.BackColor = Color.CadetBlue;
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(808, 46);
+            pictureBox2.Size = new Size(902, 51);
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
@@ -152,6 +161,7 @@
             lbl_cadastrar.TabIndex = 5;
             lbl_cadastrar.Text = "CADASTRO DE PEDIDO";
             lbl_cadastrar.UseMnemonic = false;
+            lbl_cadastrar.Click += lbl_cadastrar_Click;
             // 
             // groupBox2
             // 
@@ -241,12 +251,12 @@
             lbl_entrega.BackColor = Color.Transparent;
             lbl_entrega.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             lbl_entrega.ForeColor = SystemColors.ControlLightLight;
-            lbl_entrega.Location = new Point(28, 117);
+            lbl_entrega.Location = new Point(17, 116);
             lbl_entrega.Name = "lbl_entrega";
             lbl_entrega.RightToLeft = RightToLeft.No;
-            lbl_entrega.Size = new Size(78, 20);
+            lbl_entrega.Size = new Size(122, 20);
             lbl_entrega.TabIndex = 17;
-            lbl_entrega.Text = "ENTREGA";
+            lbl_entrega.Text = "DATA ENTREGA";
             lbl_entrega.UseMnemonic = false;
             // 
             // lbl_pagamento
@@ -405,5 +415,6 @@
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem3;
         private ToolStripMenuItem toolStripMenuItem4;
+        private ToolStripMenuItem históricoToolStripMenuItem;
     }
 }

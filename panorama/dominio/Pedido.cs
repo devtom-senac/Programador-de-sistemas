@@ -128,5 +128,10 @@ namespace panorama.dominio
 
             pedidoRepositorio.Criar(this);
         }
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

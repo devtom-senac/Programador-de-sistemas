@@ -1,3 +1,5 @@
+using panorama;
+
 namespace costura
 {
     public partial class home : Form
@@ -48,6 +50,14 @@ namespace costura
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            historico Historico = new historico();
+            Historico.Show();
+
+            this.Hide();
         }
     }
 }
