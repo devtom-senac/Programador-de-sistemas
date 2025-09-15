@@ -1,0 +1,6 @@
+@StatusWS_HostAddress = http://localhost:5171
+
+GET {{StatusWS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
